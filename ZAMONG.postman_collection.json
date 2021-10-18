@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "f15abbae-f5b2-400b-8c30-51e15945c903",
 		"name": "ZAMONG",
-		"description": "# 사용법 간단 정리\n\n* ZAMONG Collection에 Variables로 들어가면 현재 들어있는 변수들을 확인할 수 있습니다\n\n* {{}} 안에 변수 이름을 넣어서 템플릿 문자열처럼 사용할 수 있어요 어디에서든 \n\n* 매애애애앤 밑에 Console을 누르면 최근 요청한 API의 바디, 헤더의 실제 값 들을 확인할 수 있습니다. \n\n* API마다 자세한 설명은 각 API의 Document에 정리해놓았습니다. Document를 봤는데도 이해가 안 되는 부분이 있으면 질문해주세요",
+		"description": "# 사용법 간단 정리\n\n* ZAMONG Collection에 Variables로 들어가면 현재 들어있는 변수들을 확인할 수 있습니다\n\n* Variables를 추가해서 원하는대로 사용가능해요\n\n* {{}} 안에 변수 이름을 넣어서 템플릿 문자열처럼 사용할 수 있어요 어디에서든 \n\n* 매애애애앤 밑에 Console을 누르면 최근 요청한 API의 바디, 헤더의 실제 값 들을 확인할 수 있습니다. \n\n* API마다 자세한 설명은 각 API의 Document에 정리해놓았습니다. Document를 봤는데도 이해가 안 되는 부분이 있으면 질문해주세요",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -10,7 +10,7 @@
 			"name": "auth",
 			"item": [
 				{
-					"name": "/mail",
+					"name": "/mail - 이메일 인증",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -32,7 +32,8 @@
 								"auth",
 								"mail"
 							]
-						}
+						},
+						"description": "# 이메일 인증을 위한 API\n\n해당 API를 호출하면 body의 이메일로 인증코드가 담긴 이메일을 보냅니다"
 					},
 					"response": [
 						{
@@ -127,13 +128,13 @@
 					]
 				},
 				{
-					"name": "/signup",
+					"name": "/signup - 회원가입",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"정지우\",\n    \"email\": \"jiwoourty@gmail.com\",\n    \"authentication_code\": \"373586\",\n    \"id\": \"jiwoo0522\",\n    \"password\": \"jiiwoo7456#\"\n}",
+							"raw": "{\n    \"name\": \"세미콜론\",\n    \"email\": \"semicolondsm@gmail.com\",\n    \"authentication_code\": \"091497\",\n    \"id\": \"semi6S\",\n    \"password\": \"jiiwoo7456#\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -149,7 +150,8 @@
 								"auth",
 								"signup"
 							]
-						}
+						},
+						"description": "# 회원가입 API\n\n이메일 인증 필수*\nauthentication_code에 이메일 인증 코드를 넣어야 돼요\n값을 다 넣고 요청하면 회원가입 됩니다"
 					},
 					"response": [
 						{
@@ -244,7 +246,7 @@
 					]
 				},
 				{
-					"name": "/login",
+					"name": "/login 로그인",
 					"event": [
 						{
 							"listen": "test",
@@ -266,7 +268,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"user_identity\": \"jiwoourty@gmail.com\",\n    \"password\": \"jiiwoo7456#\"\n}",
+							"raw": "{\n    \"user_identity\": \"{{USER_EMAIL2}}\", \n    \"password\": \"jiiwoo7456#\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -378,7 +380,7 @@
 					]
 				},
 				{
-					"name": "/user-id/duplicate",
+					"name": "/user-id/duplicate - 아이디 중복확인",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -498,7 +500,7 @@
 					]
 				},
 				{
-					"name": "/refresh",
+					"name": "/refresh - 토큰 재발급",
 					"event": [
 						{
 							"listen": "test",
@@ -547,7 +549,7 @@
 			"name": "user",
 			"item": [
 				{
-					"name": "/{user-uuid}",
+					"name": "/{user-uuid} - 다른 사람 기본 정보",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -569,13 +571,13 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{PRODUCT_URL}}/user/850802a3-784f-4466-9ba5-87688f66f230",
+							"raw": "{{PRODUCT_URL}}/user/7359fee5-426f-45f5-bd24-cc675e7bdd12",
 							"host": [
 								"{{PRODUCT_URL}}"
 							],
 							"path": [
 								"user",
-								"850802a3-784f-4466-9ba5-87688f66f230"
+								"7359fee5-426f-45f5-bd24-cc675e7bdd12"
 							]
 						},
 						"description": "# 나 말고 다른 유저의 프로필을 확인할 때 요청하는 API입니다"
@@ -668,7 +670,7 @@
 					]
 				},
 				{
-					"name": "/me",
+					"name": "/me - 내 정보",
 					"event": [
 						{
 							"listen": "test",
@@ -706,7 +708,8 @@
 								"user",
 								"me"
 							]
-						}
+						},
+						"description": "# 내 정보를 확인하는 API \n\n해당 API를 호출하면 USER_UUID에 자동으로 uuid가 저장되서 건들지 않아도 됩니다"
 					},
 					"response": [
 						{
@@ -796,7 +799,7 @@
 					]
 				},
 				{
-					"name": "/{user-uuid}/following",
+					"name": "/{user-uuid}/following - 팔로잉 목록",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -811,7 +814,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{PRODUCT_URL}}/user/{{USER_UUID}}/following",
+							"raw": "{{PRODUCT_URL}}/user/{{USER_UUID}}/following?page=0&size=1",
 							"host": [
 								"{{PRODUCT_URL}}"
 							],
@@ -819,6 +822,16 @@
 								"user",
 								"{{USER_UUID}}",
 								"following"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								}
 							]
 						},
 						"description": "# 팔로잉 목록\n\n내가 팔로우한 사람들의 목록입니다\n\n/user/me API를 호출하면 USER_UUID가 자동으로 생성돼요"
@@ -859,7 +872,7 @@
 					]
 				},
 				{
-					"name": "/{user-uuid}/follower",
+					"name": "/{user-uuid}/follower - 팔로워 목록",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -874,7 +887,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{PRODUCT_URL}}/user/{{USER_UUID}}/follower",
+							"raw": "{{PRODUCT_URL}}/user/{{USER_UUID}}/follower?page=0&size=4",
 							"host": [
 								"{{PRODUCT_URL}}"
 							],
@@ -882,6 +895,16 @@
 								"user",
 								"{{USER_UUID}}",
 								"follower"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "4"
+								}
 							]
 						},
 						"description": "# 팔로워 목록 API\n\n나를 팔로우한 사람들의 목록입니다\n\n/user/me API를 호출하면 USER_UUID가 자동으로 생성돼요"
@@ -922,13 +945,23 @@
 					]
 				},
 				{
-					"name": "/follow",
+					"name": "/follow - 팔로우하기",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"user_uuid\": \"\"\n}",
+							"raw": "{\n    \"user_uuid\": \"7359fee5-426f-45f5-bd24-cc675e7bdd12\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -944,7 +977,8 @@
 								"user",
 								"follow"
 							]
-						}
+						},
+						"description": "# 팔로우하기 API \nuser_uuid에 넣은 uuid에 해당하는 유저를 팔로우합니다"
 					},
 					"response": []
 				}
@@ -954,241 +988,216 @@
 			"name": "dream",
 			"item": [
 				{
-					"name": "/share",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{accessToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"title\": \"개좆같은 꿈을 다 꿨네\",\n    \"content\": \"8열 정도 되는 라인에 소들이 서있음. 내가 앞으로 걸어 갈때 마다 컨베이어 벨트 공정 마냥.\\n각 도살과정들이 차례대로 보인다. 깨끗하게 물로 샤워시키고 해체.\\n더 앞으로 나아가니 내 눈 높이에 맞춰진 식당 조리실에서 자주쓰이는 스테인레스 탁상들,그 위에 가죽 벗겨진 개들 ,앞으로 갈 수록 같은 모습의 강아지들이 나온다.\\n반으로 갈라지고 피 범벅의 개들. 더 앞으로 가봤다.\\n직감적으로....\",\n    \"quality\": \"WORST\",\n    \"dream_types\": [\"NIGHTMARE\", \"LUCID_DREAM\"],\n    \"sleep_begin_datetime\": \"2021-10-12T00:00:00.426066\",\n    \"sleep_end_datetime\": \"2021-10-12T04:00:00.426066\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{PRODUCT_URL}}/dream/share",
-							"host": [
-								"{{PRODUCT_URL}}"
-							],
-							"path": [
-								"dream",
-								"share"
-							]
-						},
-						"description": "# 공유꿈 작성하는 API\n\n내용을 꼭 다 채우셔야 합니다."
-					},
-					"response": []
-				},
-				{
-					"name": "/dream/share/{dream-uuid}",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{accessToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "{{PRODUCT_URL}}/dream/share/{{SHARE_DREAM_UUID}}",
-							"host": [
-								"{{PRODUCT_URL}}"
-							],
-							"path": [
-								"dream",
-								"share",
-								"{{SHARE_DREAM_UUID}}"
-							]
-						},
-						"description": "# 꿈 공유 API \n\n공유한 날짜 반환"
-					},
-					"response": [
+					"name": "share",
+					"item": [
 						{
-							"name": "/dream/share/{dream-uuid}",
-							"originalRequest": {
+							"name": "/ - 공유 꿈 작성",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"동생이 악어에 물리는꿈..\",\n    \"content\": \"동생이 악어에 물리는 꿈을 꿨어요..\\n악어랑 눈이 마주쳤는데 눈이 노랗게 빛나는 그런 섬뜩한 꿈을 꿨는데.\",\n    \"quality\": \"BAD\",\n    \"dream_types\": [\"NIGHTMARE\", \"FALSE_AWAKE\"],\n    \"sleep_begin_datetime\": \"2021-10-12T00:00:00.426066\",\n    \"sleep_end_datetime\": \"2021-10-12T04:00:00.426066\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{PRODUCT_URL}}/dream/share",
+									"host": [
+										"{{PRODUCT_URL}}"
+									],
+									"path": [
+										"dream",
+										"share"
+									]
+								},
+								"description": "# 공유꿈 작성하는 API\n\n내용을 꼭 다 채우셔야 합니다."
+							},
+							"response": []
+						},
+						{
+							"name": "/{dream-uuid} - 꿈 공유하기",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "{{LOCAL_URL}}/dream/share/{{SHARE_DREAM_UUID}}",
+									"raw": "{{PRODUCT_URL}}/dream/share/{{SHARE_DREAM_UUID}}",
 									"host": [
-										"{{LOCAL_URL}}"
+										"{{PRODUCT_URL}}"
 									],
 									"path": [
 										"dream",
 										"share",
 										"{{SHARE_DREAM_UUID}}"
 									]
-								}
+								},
+								"description": "# 꿈 공유 API \n\n공유한 날짜 반환"
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "Vary",
-									"value": "Access-Control-Request-Method"
-								},
-								{
-									"key": "Vary",
-									"value": "Access-Control-Request-Headers"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "DENY"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 14 Oct 2021 00:33:42 GMT"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=60"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"status\": 200,\n    \"timestamp\": \"2021-10-14T09:33:42.557399\",\n    \"content\": {\n        \"collection_value\": false,\n        \"response\": {\n            \"uuid\": \"49c095d4-1d0d-4003-878c-bafd54971ba4\",\n            \"share_datetime\": \"2021-10-14T09:33:42.488994\"\n        }\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "/share/{dream-uuid}",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{accessToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"title\": \"나 꿈속에서 꿈인거 알아차리고 깨어남\",\n    \"content\": \"내꿈 상황은 소묘실기보려고 학교반에 앉아서 대기상태. 거기에 애들도 많았었고 그냥 수능시험보는거랑 똑같았음 자리배치도ㅇㅇ\\n그렇게 대기하고있다가 쌤오셨는데 현실에서는 무용쌤이 꿈에서는 미술쌤으로 등장하셨음\\n여기서 약간 어 뭐지? 저쌤 무용쌤이셨는데? 이생각들고 여기서 이상함을 느낌 그렇지만 아직까지 자각은 못함\\n암튼 그쌤이 들어오셔서 시험보는방법 설명하고나서 갑자기 나를 지목하더니 \\\"너 체육복입고 학교오고싶었다메?\\\" 이러면서 시비터는거임; 알고보니 담임쌤한테 바라는점 쓰라고 할때 나는 체육복입고 등교하게해주세요 라고 썼더라고\",\n    \"quality\": \"BAD\",\n    \"dream_types\": [\"WET_DREAM\"],\n    \"sleep_begin_datetime\": \"2021-09-26T23:00:00.426066\",\n    \"sleep_end_datetime\": \"2021-09-27T10:00:00.426066\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{PRODUCT_URL}}/dream/share/49c095d4-1d0d-4003-878c-bafd54971ba4",
-							"host": [
-								"{{PRODUCT_URL}}"
-							],
-							"path": [
-								"dream",
-								"share",
-								"49c095d4-1d0d-4003-878c-bafd54971ba4"
-							]
-						},
-						"description": "# 공유 꿈 수정 API\n\nPUT이기 때문에 모든 값을 다 넣어야 합니다 \n안넣으면 null로 돼요"
-					},
-					"response": []
-				},
-				{
-					"name": "/share",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{accessToken}}",
-									"type": "string"
+									"name": "/dream/share/{dream-uuid}",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{LOCAL_URL}}/dream/share/{{SHARE_DREAM_UUID}}",
+											"host": [
+												"{{LOCAL_URL}}"
+											],
+											"path": [
+												"dream",
+												"share",
+												"{{SHARE_DREAM_UUID}}"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 14 Oct 2021 00:33:42 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"timestamp\": \"2021-10-14T09:33:42.557399\",\n    \"content\": {\n        \"collection_value\": false,\n        \"response\": {\n            \"uuid\": \"49c095d4-1d0d-4003-878c-bafd54971ba4\",\n            \"share_datetime\": \"2021-10-14T09:33:42.488994\"\n        }\n    }\n}"
 								}
 							]
 						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{PRODUCT_URL}}/dream/share?page=0&size=3",
-							"host": [
-								"{{PRODUCT_URL}}"
-							],
-							"path": [
-								"dream",
-								"share"
-							],
-							"query": [
-								{
-									"key": "page",
-									"value": "0"
-								},
-								{
-									"key": "size",
-									"value": "3"
-								}
-							]
-						},
-						"description": "# Page는 0부터 시작, Size는 1로 하면 1개가 와요"
-					},
-					"response": [
 						{
-							"name": "/share",
-							"originalRequest": {
+							"name": "/{dream-uuid} - 공유 꿈 전체 수정",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"나 꿈속에서 꿈인거 알아차리고 깨어남\",\n    \"content\": \"내꿈 상황은 소묘실기보려고 학교반에 앉아서 대기상태. 거기에 애들도 많았었고 그냥 수능시험보는거랑 똑같았음 자리배치도ㅇㅇ\\n그렇게 대기하고있다가 쌤오셨는데 현실에서는 무용쌤이 꿈에서는 미술쌤으로 등장하셨음\\n여기서 약간 어 뭐지? 저쌤 무용쌤이셨는데? 이생각들고 여기서 이상함을 느낌 그렇지만 아직까지 자각은 못함\\n암튼 그쌤이 들어오셔서 시험보는방법 설명하고나서 갑자기 나를 지목하더니 \\\"너 체육복입고 학교오고싶었다메?\\\" 이러면서 시비터는거임; 알고보니 담임쌤한테 바라는점 쓰라고 할때 나는 체육복입고 등교하게해주세요 라고 썼더라고\",\n    \"quality\": \"BAD\",\n    \"dream_types\": [\"WET_DREAM\"],\n    \"sleep_begin_datetime\": \"2021-09-26T23:00:00.426066\",\n    \"sleep_end_datetime\": \"2021-09-27T10:00:00.426066\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{PRODUCT_URL}}/dream/share/49c095d4-1d0d-4003-878c-bafd54971ba4",
+									"host": [
+										"{{PRODUCT_URL}}"
+									],
+									"path": [
+										"dream",
+										"share",
+										"49c095d4-1d0d-4003-878c-bafd54971ba4"
+									]
+								},
+								"description": "# 공유 꿈 수정 API\n\nPUT이기 때문에 모든 값을 다 넣어야 합니다 \n안넣으면 null로 돼요"
+							},
+							"response": []
+						},
+						{
+							"name": "/ - 최근 공유된 꿈 목록",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{LOCAL_URL}}/dream/share?page=0&size=3",
+									"raw": "{{PRODUCT_URL}}/dream/share?page=0&size=3",
 									"host": [
-										"{{LOCAL_URL}}"
+										"{{PRODUCT_URL}}"
 									],
 									"path": [
 										"dream",
@@ -1204,186 +1213,267 @@
 											"value": "3"
 										}
 									]
+								},
+								"description": "# Page는 0부터 시작, Size는 1로 하면 1개가 와요"
+							},
+							"response": [
+								{
+									"name": "/share",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{LOCAL_URL}}/dream/share?page=0&size=3",
+											"host": [
+												"{{LOCAL_URL}}"
+											],
+											"path": [
+												"dream",
+												"share"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "0"
+												},
+												{
+													"key": "size",
+													"value": "3"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "JSESSIONID=C7C769B17094866C8B414F74D87DD708; Path=/v1/api; HttpOnly"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 14 Oct 2021 00:30:29 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"timestamp\": \"2021-10-14T09:30:29.480324\",\n    \"content\": {\n        \"collection_value\": false,\n        \"response\": {\n            \"share_dreams\": [\n                {\n                    \"uuid\": \"80e883b8-50e3-4bea-9b0b-a8818319b7e5\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"profile\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"title\": \"나 꿈속에서 꿈인거 알아차리고 깨어남\",\n                    \"is_shared\": true,\n                    \"lucy_count\": 1,\n                    \"dream_types\": [\n                        \"LUCID_DREAM\"\n                    ],\n                    \"share_datetime\": \"2021-10-14T08:57:07\"\n                }\n            ],\n            \"total_page\": 1,\n            \"total_size\": 2\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "/me - 최근 작성한 공유 꿈",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{PRODUCT_URL}}/dream/share/me?page=0&size=3",
+									"host": [
+										"{{PRODUCT_URL}}"
+									],
+									"path": [
+										"dream",
+										"share",
+										"me"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "3"
+										}
+									]
 								}
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Vary",
-									"value": "Origin"
+							"response": []
+						},
+						{
+							"name": "/quality/{dream-uuid} - 꿈 품질 수정",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
 								},
-								{
-									"key": "Vary",
-									"value": "Access-Control-Request-Method"
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"quality\": \"GOOD\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
 								},
-								{
-									"key": "Vary",
-									"value": "Access-Control-Request-Headers"
+								"url": {
+									"raw": "{{PRODUCT_URL}}/dream/share/quality/{{SHARE_DREAM_UUID}}",
+									"host": [
+										"{{PRODUCT_URL}}"
+									],
+									"path": [
+										"dream",
+										"share",
+										"quality",
+										"{{SHARE_DREAM_UUID}}"
+									]
 								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
+								"description": "# 꿈 품질 수정 \n\n적당히 넣으면 돼요"
+							},
+							"response": []
+						},
+						{
+							"name": "/sleep-datetime/{dream-uuid} - 꿈 꾼 날짜 수정",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"sleep_begin_datetime\": \"2021-09-27T01:00:00.426066\",\n  \"sleep_end_datetime\": \"2021-09-28T12:00:00.426066\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
 								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
+								"url": {
+									"raw": "{{LOCAL_URL}}/dream/share/sleep-datetime/{{SHARE_DREAM_UUID}}",
+									"host": [
+										"{{LOCAL_URL}}"
+									],
+									"path": [
+										"dream",
+										"share",
+										"sleep-datetime",
+										"{{SHARE_DREAM_UUID}}"
+									]
 								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								"description": "# 꿈 꾼 날짜 수정 \n\n꿈을 꾼 시각, 꿈에서 깬 시각을 넣으세요"
+							},
+							"response": []
+						},
+						{
+							"name": "/{dream-uuid} - 공유 취소",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": null
+							},
+							"response": []
+						},
+						{
+							"name": "/timetable - 내가 작성한 공유꿈 - 날짜별",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
 								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "DENY"
-								},
-								{
-									"key": "Set-Cookie",
-									"value": "JSESSIONID=C7C769B17094866C8B414F74D87DD708; Path=/v1/api; HttpOnly"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 14 Oct 2021 00:30:29 GMT"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=60"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{PRODUCT_URL}}/dream/share/timetable?year=2021&month=9",
+									"host": [
+										"{{PRODUCT_URL}}"
+									],
+									"path": [
+										"dream",
+										"share",
+										"timetable"
+									],
+									"query": [
+										{
+											"key": "year",
+											"value": "2021"
+										},
+										{
+											"key": "month",
+											"value": "9"
+										}
+									]
 								}
-							],
-							"cookie": [],
-							"body": "{\n    \"status\": 200,\n    \"timestamp\": \"2021-10-14T09:30:29.480324\",\n    \"content\": {\n        \"collection_value\": false,\n        \"response\": {\n            \"share_dreams\": [\n                {\n                    \"uuid\": \"80e883b8-50e3-4bea-9b0b-a8818319b7e5\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"profile\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"title\": \"나 꿈속에서 꿈인거 알아차리고 깨어남\",\n                    \"is_shared\": true,\n                    \"lucy_count\": 1,\n                    \"dream_types\": [\n                        \"LUCID_DREAM\"\n                    ],\n                    \"share_datetime\": \"2021-10-14T08:57:07\"\n                }\n            ],\n            \"total_page\": 1,\n            \"total_size\": 2\n        }\n    }\n}"
+							},
+							"response": []
 						}
 					]
 				},
 				{
-					"name": "/dream/share/quality/{dream-uuid}",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{accessToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"quality\": \"GOOD\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{PRODUCT_URL}}/dream/share/quality/{{SHARE_DREAM_UUID}}",
-							"host": [
-								"{{PRODUCT_URL}}"
-							],
-							"path": [
-								"dream",
-								"share",
-								"quality",
-								"{{SHARE_DREAM_UUID}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/dream/share/sleep-datetime/{dream-uuid}",
-					"request": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"sleep_begin_datetime\": \"2021-09-27T01:00:00.426066\",\n  \"sleep_end_datetime\": \"2021-09-28T12:00:00.426066\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{LOCAL_URL}}/dream/share/sleep-datetime/{{SHARE_DREAM_UUID}}",
-							"host": [
-								"{{LOCAL_URL}}"
-							],
-							"path": [
-								"dream",
-								"share",
-								"sleep-datetime",
-								"{{SHARE_DREAM_UUID}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/dream/title/{dream-uuid}",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{accessToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"title\": \"나 꿈속에서 꿈인거 알아차리고 깨어남......\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{PRODUCT_URL}}/dream/title/{{SHARE_DREAM_UUID}}",
-							"host": [
-								"{{PRODUCT_URL}}"
-							],
-							"path": [
-								"dream",
-								"title",
-								"{{SHARE_DREAM_UUID}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "/dream/dream-types/{dream-uuid}",
+					"name": "/dream-types/{dream-uuid} - 꿈 유형 수정",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -1416,12 +1506,52 @@
 								"dream-types",
 								"{{SHARE_DREAM_UUID}}"
 							]
-						}
+						},
+						"description": "# 꿈 유형 수정 \n\n적당이 넣으면 됩니다"
 					},
 					"response": []
 				},
 				{
-					"name": "/{dream-uuid}",
+					"name": "/title/{dream-uuid} - 꿈 제목 수정",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"나 꿈속에서 꿈인거 알아차리고 깨어남......\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{PRODUCT_URL}}/dream/title/{{SHARE_DREAM_UUID}}",
+							"host": [
+								"{{PRODUCT_URL}}"
+							],
+							"path": [
+								"dream",
+								"title",
+								"{{SHARE_DREAM_UUID}}"
+							]
+						},
+						"description": "# 꿈 제목 수정 \n\n적당히 적당히 넣으면 돼요"
+					},
+					"response": []
+				},
+				{
+					"name": "/{dream-uuid} - 꿈 삭제",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -1495,10 +1625,22 @@
 		},
 		{
 			"key": "PRODUCT_URL",
-			"value": ""
+			"value": "http://zamong.potatochips.live/v1/api"
 		},
 		{
 			"key": "USER_UUID",
+			"value": ""
+		},
+		{
+			"key": "USER_EMAIL1",
+			"value": ""
+		},
+		{
+			"key": "USER_EMAIL2",
+			"value": ""
+		},
+		{
+			"key": "USER_EMAIL3",
 			"value": ""
 		}
 	]
