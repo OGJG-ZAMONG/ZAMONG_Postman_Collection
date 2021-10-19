@@ -1625,7 +1625,7 @@
 		},
 		{
 			"key": "PRODUCT_URL",
-			"value": "http://zamong.potatochips.live/v1/api"
+			"value": "http://52.78.219.131:8080/v1/api"
 		},
 		{
 			"key": "USER_UUID",
