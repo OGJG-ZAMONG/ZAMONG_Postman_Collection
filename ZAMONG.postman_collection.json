@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"address\": \"jiwoourty@gmail.com\"\n}",
+							"raw": "{\n    \"address\": \"201216jjw@dsm.hs.kr\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -134,7 +134,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"세미콜론\",\n    \"email\": \"semicolondsm@gmail.com\",\n    \"authentication_code\": \"091497\",\n    \"id\": \"semi6S\",\n    \"password\": \"jiiwoo7456#\"\n}",
+							"raw": "{\n    \"name\": \"정지우\",\n    \"email\": \"jiwoourty@gmail.com\",\n    \"authentication_code\": \"431757\",\n    \"id\": \"jiwoo0522\",\n    \"password\": \"jiiwoo7456#\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -386,7 +386,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": \"helloworld1234\"\n}",
+							"raw": "{\n    \"id\": \"jiwoourty\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -571,13 +571,13 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{PRODUCT_URL}}/user/7359fee5-426f-45f5-bd24-cc675e7bdd12",
+							"raw": "{{PRODUCT_URL}}/user/850802a3-784f-4466-9ba5-87688f66f230",
 							"host": [
 								"{{PRODUCT_URL}}"
 							],
 							"path": [
 								"user",
-								"7359fee5-426f-45f5-bd24-cc675e7bdd12"
+								"850802a3-784f-4466-9ba5-87688f66f230"
 							]
 						},
 						"description": "# 나 말고 다른 유저의 프로필을 확인할 때 요청하는 API입니다"
@@ -961,7 +961,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"user_uuid\": \"7359fee5-426f-45f5-bd24-cc675e7bdd12\"\n}",
+							"raw": "{\n    \"user_uuid\": \"850802a3-784f-4466-9ba5-87688f66f230\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -979,6 +979,127 @@
 							]
 						},
 						"description": "# 팔로우하기 API \nuser_uuid에 넣은 uuid에 해당하는 유저를 팔로우합니다"
+					},
+					"response": []
+				},
+				{
+					"name": "/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "/{user-uuid}/profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/zuzu/Downloads/10_01.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{PRODUCT_URL}}/user/profile",
+							"host": [
+								"{{PRODUCT_URL}}"
+							],
+							"path": [
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/user-id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"hello_rell\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{PRODUCT_URL}}/user/user-id",
+							"host": [
+								"{{PRODUCT_URL}}"
+							],
+							"path": [
+								"user",
+								"user-id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"old_password\": \"jiwoo7456@\",\n    \"new_password\": \"jiwoo7456#\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{PRODUCT_URL}}/user/password",
+							"host": [
+								"{{PRODUCT_URL}}"
+							],
+							"path": [
+								"user",
+								"password"
+							]
+						}
 					},
 					"response": []
 				}
@@ -1468,6 +1589,128 @@
 									]
 								}
 							},
+							"response": [
+								{
+									"name": "/timetable",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{PRODUCT_URL}}/dream/share/timetable?year=2021&month=9",
+											"host": [
+												"{{PRODUCT_URL}}"
+											],
+											"path": [
+												"dream",
+												"share",
+												"timetable"
+											],
+											"query": [
+												{
+													"key": "year",
+													"value": "2021"
+												},
+												{
+													"key": "month",
+													"value": "9"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 18 Oct 2021 00:24:21 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"timestamp\": \"2021-10-18T09:24:21.627785\",\n    \"content\": {\n        \"collection_value\": false,\n        \"response\": {\n            \"timetables\": {\n                \"2021-09-26\": [\n                    {\n                        \"uuid\": \"49c095d4-1d0d-4003-878c-bafd54971ba4\",\n                        \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                        \"profile\": null,\n                        \"title\": \"나 꿈속에서 꿈인거 알아차리고 깨어남\",\n                        \"created_at\": null,\n                        \"is_shared\": true\n                    }\n                ]\n            }\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "/timetable/v2 - 날짜별 꿈 목록 V2",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{PRODUCT_URL}}/dream/share/timetable/v2?year=2021&month=9",
+									"host": [
+										"{{PRODUCT_URL}}"
+									],
+									"path": [
+										"dream",
+										"share",
+										"timetable",
+										"v2"
+									],
+									"query": [
+										{
+											"key": "year",
+											"value": "2021"
+										},
+										{
+											"key": "month",
+											"value": "9"
+										}
+									]
+								}
+							},
 							"response": []
 						}
 					]
@@ -1578,6 +1821,225 @@
 						"description": "# 꿈 삭제 API \n\n공유꿈만이 아니라 다른 꿈도 삭제할 수 있습니다"
 					},
 					"response": []
+				},
+				{
+					"name": "/{dream-uuid}/comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"content\": \"hello 상위댓글\",\n    \"p_comment\": null\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{PRODUCT_URL}}/dream/{{DREAM_UUID}}/comment",
+							"host": [
+								"{{PRODUCT_URL}}"
+							],
+							"path": [
+								"dream",
+								"{{DREAM_UUID}}",
+								"comment"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/{dream-uuid}/comment",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"content\": \"hello 상위댓글\",\n    \"p_comment\": null\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{PRODUCT_URL}}/dream/{{DREAM_UUID}}/comment",
+									"host": [
+										"{{PRODUCT_URL}}"
+									],
+									"path": [
+										"dream",
+										"{{DREAM_UUID}}",
+										"comment"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 27 Oct 2021 01:51:13 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 201,\n    \"timestamp\": \"2021-10-27T10:51:13.403441\",\n    \"content\": {\n        \"collection_value\": false,\n        \"response\": {\n            \"uuid\": \"9ce9fa9e-8678-4360-9e6d-3946b91fec71\",\n            \"content\": \"hello 하위댓글\",\n            \"user\": {\n                \"uuid\": \"7359fee5-426f-45f5-bd24-cc675e7bdd12\",\n                \"name\": \"jiwoo\",\n                \"email\": null,\n                \"id\": null,\n                \"profile\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                \"share_dream_count\": null,\n                \"lucy_count\": null\n            }\n        }\n    }\n}"
+						},
+						{
+							"name": "/{dream-uuid}/comment",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"content\": \"hello 하위댓글\",\n    \"p_comment\": \"6f991f2b-cd4e-457a-9fe7-96ff332231ee\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{PRODUCT_URL}}/dream/{{DREAM_UUID}}/comment",
+									"host": [
+										"{{PRODUCT_URL}}"
+									],
+									"path": [
+										"dream",
+										"{{DREAM_UUID}}",
+										"comment"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 27 Oct 2021 01:51:13 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 201,\n    \"timestamp\": \"2021-10-27T10:51:13.403441\",\n    \"content\": {\n        \"collection_value\": false,\n        \"response\": {\n            \"uuid\": \"9ce9fa9e-8678-4360-9e6d-3946b91fec71\",\n            \"content\": \"hello 하위댓글\",\n            \"user\": {\n                \"uuid\": \"7359fee5-426f-45f5-bd24-cc675e7bdd12\",\n                \"name\": \"jiwoo\",\n                \"email\": null,\n                \"id\": null,\n                \"profile\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                \"share_dream_count\": null,\n                \"lucy_count\": null\n            }\n        }\n    }\n}"
+						}
+					]
 				}
 			]
 		}
@@ -1642,6 +2104,10 @@
 		{
 			"key": "USER_EMAIL3",
 			"value": ""
+		},
+		{
+			"key": "DREAM_UUID",
+			"value": "16be16fc-a5df-404d-8e6b-8b3018d60da4"
 		}
 	]
 }
