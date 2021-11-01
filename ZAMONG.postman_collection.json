@@ -983,16 +983,7 @@
 					"response": []
 				},
 				{
-					"name": "/",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": null
-					},
-					"response": []
-				},
-				{
-					"name": "/{user-uuid}/profile",
+					"name": "/{user-uuid}/profile - 프로필 수정",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -1030,7 +1021,7 @@
 					"response": []
 				},
 				{
-					"name": "/user-id",
+					"name": "/user-id - 아이디 수정",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -1067,7 +1058,7 @@
 					"response": []
 				},
 				{
-					"name": "/password",
+					"name": "/password - 비밀번호 변경",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -1112,7 +1103,121 @@
 					"name": "share",
 					"item": [
 						{
+							"name": "/{dream-uuid} - 공유 꿈 상세정보",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{PRODUCT_URL}}/dream/share/16be16fc-a5df-404d-8e6b-8b3018d60da4",
+									"host": [
+										"{{PRODUCT_URL}}"
+									],
+									"path": [
+										"dream",
+										"share",
+										"16be16fc-a5df-404d-8e6b-8b3018d60da4"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "/{dream-uuid} - 공유 꿈 상세정보",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{PRODUCT_URL}}/dream/share/16be16fc-a5df-404d-8e6b-8b3018d60da4",
+											"host": [
+												"{{PRODUCT_URL}}"
+											],
+											"path": [
+												"dream",
+												"share",
+												"16be16fc-a5df-404d-8e6b-8b3018d60da4"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 28 Oct 2021 04:16:24 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"timestamp\": \"2021-10-28T13:16:24.078416\",\n    \"content\": {\n        \"collection_value\": false,\n        \"response\": {\n            \"uuid\": \"16be16fc-a5df-404d-8e6b-8b3018d60da4\",\n            \"title\": \"동생이 악어에 물리는꿈..\",\n            \"content\": \"동생이 악어에 물리는 꿈을 꿨어요..\\n악어랑 눈이 마주쳤는데 눈이 노랗게 빛나는 그런 섬뜩한 꿈을 꿨는데.\",\n            \"updated_at\": \"2021-10-18T01:37:52\",\n            \"dream_types\": [\n                \"NIGHTMARE\",\n                \"FALSE_AWAKE\"\n            ],\n            \"attachment_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n            \"quality\": \"BAD\",\n            \"is_shared\": false,\n            \"sleep_begin_date_time\": \"2021-10-12T00:00:00\",\n            \"sleep_end_date_time\": \"2021-10-12T04:00:00\",\n            \"share_date_time\": null,\n            \"lucy_count\": 0,\n            \"user\": {\n                \"uuid\": \"7359fee5-426f-45f5-bd24-cc675e7bdd12\",\n                \"id\": \"helloworld\",\n                \"profile\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\"\n            }\n        }\n    }\n}"
+								}
+							]
+						},
+						{
 							"name": "/ - 공유 꿈 작성",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -1125,7 +1230,14 @@
 									]
 								},
 								"method": "POST",
-								"header": [],
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "multipart/form-data",
+										"type": "text",
+										"disabled": true
+									}
+								],
 								"body": {
 									"mode": "raw",
 									"raw": "{\n    \"title\": \"동생이 악어에 물리는꿈..\",\n    \"content\": \"동생이 악어에 물리는 꿈을 꿨어요..\\n악어랑 눈이 마주쳤는데 눈이 노랗게 빛나는 그런 섬뜩한 꿈을 꿨는데.\",\n    \"quality\": \"BAD\",\n    \"dream_types\": [\"NIGHTMARE\", \"FALSE_AWAKE\"],\n    \"sleep_begin_datetime\": \"2021-10-12T00:00:00.426066\",\n    \"sleep_end_datetime\": \"2021-10-12T04:00:00.426066\"\n}",
@@ -1165,14 +1277,14 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "{{PRODUCT_URL}}/dream/share/{{SHARE_DREAM_UUID}}",
+									"raw": "{{PRODUCT_URL}}/dream/share/a14a47af-1cba-4794-b402-2f1b5ee5893d",
 									"host": [
 										"{{PRODUCT_URL}}"
 									],
 									"path": [
 										"dream",
 										"share",
-										"{{SHARE_DREAM_UUID}}"
+										"a14a47af-1cba-4794-b402-2f1b5ee5893d"
 									]
 								},
 								"description": "# 꿈 공유 API \n\n공유한 날짜 반환"
@@ -1516,6 +1628,16 @@
 						{
 							"name": "/sleep-datetime/{dream-uuid} - 꿈 꾼 날짜 수정",
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
 								"method": "PATCH",
 								"header": [],
 								"body": {
@@ -1528,15 +1650,15 @@
 									}
 								},
 								"url": {
-									"raw": "{{LOCAL_URL}}/dream/share/sleep-datetime/{{SHARE_DREAM_UUID}}",
+									"raw": "{{PRODUCT_URL}}/dream/share/sleep-datetime/16be16fc-a5df-404d-8e6b-8b3018d60da4",
 									"host": [
-										"{{LOCAL_URL}}"
+										"{{PRODUCT_URL}}"
 									],
 									"path": [
 										"dream",
 										"share",
 										"sleep-datetime",
-										"{{SHARE_DREAM_UUID}}"
+										"16be16fc-a5df-404d-8e6b-8b3018d60da4"
 									]
 								},
 								"description": "# 꿈 꾼 날짜 수정 \n\n꿈을 꾼 시각, 꿈에서 깬 시각을 넣으세요"
@@ -1712,6 +1834,76 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "/image/{dream-uuid} - 꿈 이미지 수정",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/Users/zuzu/Downloads/2. 프로세스정의서_2조.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{PRODUCT_URL}}/dream/share/image/16be16fc-a5df-404d-8e6b-8b3018d60da4",
+									"host": [
+										"{{PRODUCT_URL}}"
+									],
+									"path": [
+										"dream",
+										"share",
+										"image",
+										"16be16fc-a5df-404d-8e6b-8b3018d60da4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/{dream-uuid}/lucy - 좋아요(루시)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{PRODUCT_URL}}/dream/share/e8b98224-6cd7-4200-9107-82efa7981a2c/lucy",
+									"host": [
+										"{{PRODUCT_URL}}"
+									],
+									"path": [
+										"dream",
+										"share",
+										"e8b98224-6cd7-4200-9107-82efa7981a2c",
+										"lucy"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -1823,7 +2015,7 @@
 					"response": []
 				},
 				{
-					"name": "/{dream-uuid}/comment",
+					"name": "/{dream-uuid}/comment - 댓글 작성",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -1839,7 +2031,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"content\": \"hello 상위댓글\",\n    \"p_comment\": null\n}",
+							"raw": "{\n    \"content\": \"Hello World\",\n    \"p_comment\": null\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1860,7 +2052,7 @@
 					},
 					"response": [
 						{
-							"name": "/{dream-uuid}/comment",
+							"name": "/{dream-uuid}/comment - 일반 댓글 작성",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
@@ -1950,7 +2142,7 @@
 							"body": "{\n    \"status\": 201,\n    \"timestamp\": \"2021-10-27T10:51:13.403441\",\n    \"content\": {\n        \"collection_value\": false,\n        \"response\": {\n            \"uuid\": \"9ce9fa9e-8678-4360-9e6d-3946b91fec71\",\n            \"content\": \"hello 하위댓글\",\n            \"user\": {\n                \"uuid\": \"7359fee5-426f-45f5-bd24-cc675e7bdd12\",\n                \"name\": \"jiwoo\",\n                \"email\": null,\n                \"id\": null,\n                \"profile\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                \"share_dream_count\": null,\n                \"lucy_count\": null\n            }\n        }\n    }\n}"
 						},
 						{
-							"name": "/{dream-uuid}/comment",
+							"name": "/{dream-uuid}/comment - 대댓글 작성",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
@@ -2040,6 +2232,225 @@
 							"body": "{\n    \"status\": 201,\n    \"timestamp\": \"2021-10-27T10:51:13.403441\",\n    \"content\": {\n        \"collection_value\": false,\n        \"response\": {\n            \"uuid\": \"9ce9fa9e-8678-4360-9e6d-3946b91fec71\",\n            \"content\": \"hello 하위댓글\",\n            \"user\": {\n                \"uuid\": \"7359fee5-426f-45f5-bd24-cc675e7bdd12\",\n                \"name\": \"jiwoo\",\n                \"email\": null,\n                \"id\": null,\n                \"profile\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                \"share_dream_count\": null,\n                \"lucy_count\": null\n            }\n        }\n    }\n}"
 						}
 					]
+				},
+				{
+					"name": "/{dream-uuid}/comment - 꿈의 댓글 목록(상위 댓글)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{PRODUCT_URL}}/dream/16be16fc-a5df-404d-8e6b-8b3018d60da4/comment",
+							"host": [
+								"{{PRODUCT_URL}}"
+							],
+							"path": [
+								"dream",
+								"16be16fc-a5df-404d-8e6b-8b3018d60da4",
+								"comment"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/{dream-uuid}/comment",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{PRODUCT_URL}}/dream/16be16fc-a5df-404d-8e6b-8b3018d60da4/comment",
+									"host": [
+										"{{PRODUCT_URL}}"
+									],
+									"path": [
+										"dream",
+										"16be16fc-a5df-404d-8e6b-8b3018d60da4",
+										"comment"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Oct 2021 17:46:20 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"timestamp\": \"2021-11-01T02:46:20.130441\",\n    \"content\": {\n        \"collection_value\": true,\n        \"response\": {\n            \"comments\": [\n                {\n                    \"uuid\": \"33d3176b-0f1d-4328-9801-bbec5a930522\",\n                    \"is_checked\": false,\n                    \"date_time\": \"2021-10-27T10:50:58\",\n                    \"user_uuid\": \"7359fee5-426f-45f5-bd24-cc675e7bdd12\",\n                    \"user_profile\": \"https://s3-zamong-1.s3.ap-northeast-2.amazonaws.com/user/10_01.jpg\",\n                    \"content\": \"hello World\",\n                    \"like_count\": 0,\n                    \"dislike_count\": 0,\n                    \"is_like\": false,\n                    \"is_dis_like\": false\n                },\n                {\n                    \"uuid\": \"6f991f2b-cd4e-457a-9fe7-96ff332231ee\",\n                    \"is_checked\": false,\n                    \"date_time\": \"2021-10-27T10:50:23\",\n                    \"user_uuid\": \"7359fee5-426f-45f5-bd24-cc675e7bdd12\",\n                    \"user_profile\": \"https://s3-zamong-1.s3.ap-northeast-2.amazonaws.com/user/10_01.jpg\",\n                    \"content\": \"hello World\",\n                    \"like_count\": 0,\n                    \"dislike_count\": 0,\n                    \"is_like\": false,\n                    \"is_dis_like\": false\n                },\n                {\n                    \"uuid\": \"9ce9fa9e-8678-4360-9e6d-3946b91fec71\",\n                    \"is_checked\": false,\n                    \"date_time\": \"2021-10-27T10:51:13\",\n                    \"user_uuid\": \"7359fee5-426f-45f5-bd24-cc675e7bdd12\",\n                    \"user_profile\": \"https://s3-zamong-1.s3.ap-northeast-2.amazonaws.com/user/10_01.jpg\",\n                    \"content\": \"hello 하위댓글\",\n                    \"like_count\": 0,\n                    \"dislike_count\": 0,\n                    \"is_like\": false,\n                    \"is_dis_like\": false\n                }\n            ]\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "/comment/{comment-uuid}/comment - 댓글의 댓글 목록",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{PRODUCT_URL}}/dream/comment/9c96b195-1372-4f21-801d-8bdbcbd3e9ec/comment",
+							"host": [
+								"{{PRODUCT_URL}}"
+							],
+							"path": [
+								"dream",
+								"comment",
+								"9c96b195-1372-4f21-801d-8bdbcbd3e9ec",
+								"comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/comment/{comment-uuid}/recommend - 댓글 추천",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"DISLIKE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{PRODUCT_URL}}/dream/comment/1140ef5b-dbaf-413e-897d-53386578a6d2/recommend",
+							"host": [
+								"{{PRODUCT_URL}}"
+							],
+							"path": [
+								"dream",
+								"comment",
+								"1140ef5b-dbaf-413e-897d-53386578a6d2",
+								"recommend"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/comment/{comment-uuid}/content - 댓글 수정",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"content\": \"1번째 v2 \"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{PRODUCT_URL}}/dream/comment/7bcbdecb-290b-4e86-aeea-eaf442d7f364/content",
+							"host": [
+								"{{PRODUCT_URL}}"
+							],
+							"path": [
+								"dream",
+								"comment",
+								"7bcbdecb-290b-4e86-aeea-eaf442d7f364",
+								"content"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
