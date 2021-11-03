@@ -814,7 +814,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{PRODUCT_URL}}/user/{{USER_UUID}}/following?page=0&size=1",
+							"raw": "{{PRODUCT_URL}}/user/{{USER_UUID}}/following?page=0&size=3",
 							"host": [
 								"{{PRODUCT_URL}}"
 							],
@@ -830,7 +830,7 @@
 								},
 								{
 									"key": "size",
-									"value": "1"
+									"value": "3"
 								}
 							]
 						},
@@ -961,7 +961,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"user_uuid\": \"850802a3-784f-4466-9ba5-87688f66f230\"\n}",
+							"raw": "{\n    \"user_uuid\": \"54edb5b9-3748-48c6-ae33-cafa20ae701b\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1240,7 +1240,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"title\": \"동생이 악어에 물리는꿈..\",\n    \"content\": \"동생이 악어에 물리는 꿈을 꿨어요..\\n악어랑 눈이 마주쳤는데 눈이 노랗게 빛나는 그런 섬뜩한 꿈을 꿨는데.\",\n    \"quality\": \"BAD\",\n    \"dream_types\": [\"FALSE_AWAKE\"],\n    \"sleep_begin_datetime\": \"2021-10-12T00:00:00.426066\",\n    \"sleep_end_datetime\": \"2021-10-12T04:00:00.426066\"\n}",
+									"raw": "{\n    \"title\": \"꿈을 겨 꿔버린.\",\n    \"content\": \"런 섬뜩한 꿈을 꿨는데.\",\n    \"quality\": \"BAD\",\n    \"dream_types\": [\"FALSE_AWAKE\"],\n    \"sleep_begin_datetime\": \"2021-10-12T00:00:00.426066\",\n    \"sleep_end_datetime\": \"2021-10-12T04:00:00.426066\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1259,7 +1259,104 @@
 								},
 								"description": "# 공유꿈 작성하는 API\n\n내용을 꼭 다 채우셔야 합니다."
 							},
-							"response": []
+							"response": [
+								{
+									"name": "/ - 공유 꿈 작성",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "multipart/form-data",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"title\": \"동생이 악어에 물리는꿈..\",\n    \"content\": \"동생이 악어에 물리는 꿈을 꿨어요..\\n악어랑 눈이 마주쳤는데 눈이 노랗게 빛나는 그런 섬뜩한 꿈을 꿨는데.\",\n    \"quality\": \"BAD\",\n    \"dream_types\": [\"FALSE_AWAKE\"],\n    \"sleep_begin_datetime\": \"2021-10-12T00:00:00.426066\",\n    \"sleep_end_datetime\": \"2021-10-12T04:00:00.426066\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{PRODUCT_URL}}/dream/share",
+											"host": [
+												"{{PRODUCT_URL}}"
+											],
+											"path": [
+												"dream",
+												"share"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 03 Nov 2021 01:55:46 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 201,\n    \"timestamp\": \"2021-11-03T01:55:46.554211\",\n    \"content\": {\n        \"collection_value\": false,\n        \"response\": {\n            \"uuid\": \"7406d8fb-8880-4358-840e-e04390611a99\",\n            \"created_at\": \"2021-11-03T01:55:46.521549\",\n            \"updated_at\": \"2021-11-03T01:55:46.521556\"\n        }\n    }\n}"
+								}
+							]
 						},
 						{
 							"name": "/{dream-uuid} - 꿈 공유하기",
@@ -1277,14 +1374,14 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "{{PRODUCT_URL}}/dream/share/a14a47af-1cba-4794-b402-2f1b5ee5893d",
+									"raw": "{{PRODUCT_URL}}/dream/share/0e3918b1-003e-4089-8fb2-8ae1b319ef3f",
 									"host": [
 										"{{PRODUCT_URL}}"
 									],
 									"path": [
 										"dream",
 										"share",
-										"a14a47af-1cba-4794-b402-2f1b5ee5893d"
+										"0e3918b1-003e-4089-8fb2-8ae1b319ef3f"
 									]
 								},
 								"description": "# 꿈 공유 API \n\n공유한 날짜 반환"
@@ -1428,7 +1525,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{PRODUCT_URL}}/dream/share?page=0&size=3",
+									"raw": "{{PRODUCT_URL}}/dream/share?page=0&size=3&sort=shared",
 									"host": [
 										"{{PRODUCT_URL}}"
 									],
@@ -1444,6 +1541,10 @@
 										{
 											"key": "size",
 											"value": "3"
+										},
+										{
+											"key": "sort",
+											"value": "shared"
 										}
 									]
 								},
@@ -1451,14 +1552,14 @@
 							},
 							"response": [
 								{
-									"name": "/share",
+									"name": "/ - 최근 공유된 꿈 목록 (루시순)",
 									"originalRequest": {
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{LOCAL_URL}}/dream/share?page=0&size=3",
+											"raw": "{{PRODUCT_URL}}/dream/share?page=0&size=3&sort=lucy",
 											"host": [
-												"{{LOCAL_URL}}"
+												"{{PRODUCT_URL}}"
 											],
 											"path": [
 												"dream",
@@ -1472,6 +1573,10 @@
 												{
 													"key": "size",
 													"value": "3"
+												},
+												{
+													"key": "sort",
+													"value": "lucy"
 												}
 											]
 										}
@@ -1517,10 +1622,6 @@
 											"value": "DENY"
 										},
 										{
-											"key": "Set-Cookie",
-											"value": "JSESSIONID=C7C769B17094866C8B414F74D87DD708; Path=/v1/api; HttpOnly"
-										},
-										{
 											"key": "Content-Type",
 											"value": "application/json"
 										},
@@ -1530,7 +1631,7 @@
 										},
 										{
 											"key": "Date",
-											"value": "Thu, 14 Oct 2021 00:30:29 GMT"
+											"value": "Wed, 03 Nov 2021 05:14:18 GMT"
 										},
 										{
 											"key": "Keep-Alive",
@@ -1542,7 +1643,101 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"status\": 200,\n    \"timestamp\": \"2021-10-14T09:30:29.480324\",\n    \"content\": {\n        \"collection_value\": false,\n        \"response\": {\n            \"share_dreams\": [\n                {\n                    \"uuid\": \"80e883b8-50e3-4bea-9b0b-a8818319b7e5\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"profile\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"title\": \"나 꿈속에서 꿈인거 알아차리고 깨어남\",\n                    \"is_shared\": true,\n                    \"lucy_count\": 1,\n                    \"dream_types\": [\n                        \"LUCID_DREAM\"\n                    ],\n                    \"share_datetime\": \"2021-10-14T08:57:07\"\n                }\n            ],\n            \"total_page\": 1,\n            \"total_size\": 2\n        }\n    }\n}"
+									"body": "{\n    \"status\": 200,\n    \"timestamp\": \"2021-11-03T14:14:18.74529\",\n    \"content\": {\n        \"collection_value\": true,\n        \"response\": {\n            \"share_dreams\": [\n                {\n                    \"uuid\": \"f2cb5cb4-22cf-4e69-a9f9-8a42c84b2827\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"profile\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"title\": \"꿈을 겨 꿔버린.\",\n                    \"lucy_count\": 1,\n                    \"dream_types\": [\n                        \"FALSE_AWAKE\"\n                    ],\n                    \"share_datetime\": \"2021-11-03T12:45:04\"\n                },\n                {\n                    \"uuid\": \"0e3918b1-003e-4089-8fb2-8ae1b319ef3f\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"profile\": \"https://s3-zamong-1.s3.ap-northeast-2.amazonaws.com/user/10_01.jpg\",\n                    \"title\": \"동생이 악어에 물리는꿈..\",\n                    \"lucy_count\": 0,\n                    \"dream_types\": [\n                        \"FALSE_AWAKE\"\n                    ],\n                    \"share_datetime\": \"2021-11-03T14:10:11\"\n                }\n            ],\n            \"total_page\": 1,\n            \"total_size\": 2\n        }\n    }\n}"
+								},
+								{
+									"name": "/ - 최근 공유된 꿈 목록 (최근순)",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{PRODUCT_URL}}/dream/share?page=0&size=3&sort=shared",
+											"host": [
+												"{{PRODUCT_URL}}"
+											],
+											"path": [
+												"dream",
+												"share"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "0"
+												},
+												{
+													"key": "size",
+													"value": "3"
+												},
+												{
+													"key": "sort",
+													"value": "shared"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 03 Nov 2021 05:14:42 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"timestamp\": \"2021-11-03T14:14:42.773061\",\n    \"content\": {\n        \"collection_value\": true,\n        \"response\": {\n            \"share_dreams\": [\n                {\n                    \"uuid\": \"0e3918b1-003e-4089-8fb2-8ae1b319ef3f\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"profile\": \"https://s3-zamong-1.s3.ap-northeast-2.amazonaws.com/user/10_01.jpg\",\n                    \"title\": \"동생이 악어에 물리는꿈..\",\n                    \"lucy_count\": 0,\n                    \"dream_types\": [\n                        \"FALSE_AWAKE\"\n                    ],\n                    \"share_datetime\": \"2021-11-03T14:10:11\"\n                },\n                {\n                    \"uuid\": \"f2cb5cb4-22cf-4e69-a9f9-8a42c84b2827\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"profile\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"title\": \"꿈을 겨 꿔버린.\",\n                    \"lucy_count\": 1,\n                    \"dream_types\": [\n                        \"FALSE_AWAKE\"\n                    ],\n                    \"share_datetime\": \"2021-11-03T12:45:04\"\n                }\n            ],\n            \"total_page\": 1,\n            \"total_size\": 2\n        }\n    }\n}"
 								}
 							]
 						},
@@ -1570,6 +1765,45 @@
 										"dream",
 										"share",
 										"me"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/follow - 팔로워 공유한 꿈 목록",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{PRODUCT_URL}}/dream/share/follow?page=0&size=3",
+									"host": [
+										"{{PRODUCT_URL}}"
+									],
+									"path": [
+										"dream",
+										"share",
+										"follow"
 									],
 									"query": [
 										{
@@ -1891,14 +2125,14 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "{{PRODUCT_URL}}/dream/share/e8b98224-6cd7-4200-9107-82efa7981a2c/lucy",
+									"raw": "{{PRODUCT_URL}}/dream/share/f2cb5cb4-22cf-4e69-a9f9-8a42c84b2827/lucy",
 									"host": [
 										"{{PRODUCT_URL}}"
 									],
 									"path": [
 										"dream",
 										"share",
-										"e8b98224-6cd7-4200-9107-82efa7981a2c",
+										"f2cb5cb4-22cf-4e69-a9f9-8a42c84b2827",
 										"lucy"
 									]
 								}
@@ -1921,14 +2155,14 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{PRODUCT_URL}}/dream/share/49c095d4-1d0d-4003-878c-bafd54971ba4/lucy",
+									"raw": "{{PRODUCT_URL}}/dream/share/f2cb5cb4-22cf-4e69-a9f9-8a42c84b2827/lucy",
 									"host": [
 										"{{PRODUCT_URL}}"
 									],
 									"path": [
 										"dream",
 										"share",
-										"49c095d4-1d0d-4003-878c-bafd54971ba4",
+										"f2cb5cb4-22cf-4e69-a9f9-8a42c84b2827",
 										"lucy"
 									]
 								}
