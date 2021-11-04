@@ -571,13 +571,13 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{PRODUCT_URL}}/user/850802a3-784f-4466-9ba5-87688f66f230",
+							"raw": "{{PRODUCT_URL}}/user/6bcc940e-f84e-42cb-b399-7d4165e487ce",
 							"host": [
 								"{{PRODUCT_URL}}"
 							],
 							"path": [
 								"user",
-								"850802a3-784f-4466-9ba5-87688f66f230"
+								"6bcc940e-f84e-42cb-b399-7d4165e487ce"
 							]
 						},
 						"description": "# 나 말고 다른 유저의 프로필을 확인할 때 요청하는 API입니다"
@@ -961,7 +961,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"user_uuid\": \"54edb5b9-3748-48c6-ae33-cafa20ae701b\"\n}",
+							"raw": "{\n    \"user_uuid\": \"6bcc940e-f84e-42cb-b399-7d4165e487ce\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1118,14 +1118,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{PRODUCT_URL}}/dream/share/16be16fc-a5df-404d-8e6b-8b3018d60da4",
+									"raw": "{{PRODUCT_URL}}/dream/share/a57c3c62-f694-45a6-b03f-44b4ac6578f0",
 									"host": [
 										"{{PRODUCT_URL}}"
 									],
 									"path": [
 										"dream",
 										"share",
-										"16be16fc-a5df-404d-8e6b-8b3018d60da4"
+										"a57c3c62-f694-45a6-b03f-44b4ac6578f0"
 									]
 								}
 							},
@@ -1240,7 +1240,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"title\": \"꿈을 겨 꿔버린.\",\n    \"content\": \"런 섬뜩한 꿈을 꿨는데.\",\n    \"quality\": \"BAD\",\n    \"dream_types\": [\"FALSE_AWAKE\"],\n    \"sleep_begin_datetime\": \"2021-10-12T00:00:00.426066\",\n    \"sleep_end_datetime\": \"2021-10-12T04:00:00.426066\"\n}",
+									"raw": "{\n    \"title\": \"꿈을.\",\n    \"content\": \"런 섬뜩한 꿈을 꿨는데.\",\n    \"quality\": \"GOOD\",\n    \"dream_types\": [\"FALSE_AWAKE\"],\n    \"sleep_begin_datetime\": \"2021-10-12T00:00:00.426066\",\n    \"sleep_end_datetime\": \"2021-10-12T04:00:00.426066\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1374,14 +1374,14 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "{{PRODUCT_URL}}/dream/share/0e3918b1-003e-4089-8fb2-8ae1b319ef3f",
+									"raw": "{{PRODUCT_URL}}/dream/share/52ed8068-3d06-4230-8871-4ae587c12ecc",
 									"host": [
 										"{{PRODUCT_URL}}"
 									],
 									"path": [
 										"dream",
 										"share",
-										"0e3918b1-003e-4089-8fb2-8ae1b319ef3f"
+										"52ed8068-3d06-4230-8871-4ae587c12ecc"
 									]
 								},
 								"description": "# 꿈 공유 API \n\n공유한 날짜 반환"
@@ -1495,14 +1495,14 @@
 									}
 								},
 								"url": {
-									"raw": "{{PRODUCT_URL}}/dream/share/49c095d4-1d0d-4003-878c-bafd54971ba4",
+									"raw": "{{PRODUCT_URL}}/dream/share/a57c3c62-f694-45a6-b03f-44b4ac6578f0",
 									"host": [
 										"{{PRODUCT_URL}}"
 									],
 									"path": [
 										"dream",
 										"share",
-										"49c095d4-1d0d-4003-878c-bafd54971ba4"
+										"a57c3c62-f694-45a6-b03f-44b4ac6578f0"
 									]
 								},
 								"description": "# 공유 꿈 수정 API\n\nPUT이기 때문에 모든 값을 다 넣어야 합니다 \n안넣으면 null로 돼요"
@@ -1510,7 +1510,7 @@
 							"response": []
 						},
 						{
-							"name": "/ - 최근 공유된 꿈 목록",
+							"name": "/ - 공유된 꿈 목록",
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -1552,7 +1552,7 @@
 							},
 							"response": [
 								{
-									"name": "/ - 최근 공유된 꿈 목록 (루시순)",
+									"name": "/ -공유된 꿈 목록 (루시순)",
 									"originalRequest": {
 										"method": "GET",
 										"header": [],
@@ -1646,7 +1646,7 @@
 									"body": "{\n    \"status\": 200,\n    \"timestamp\": \"2021-11-03T14:14:18.74529\",\n    \"content\": {\n        \"collection_value\": true,\n        \"response\": {\n            \"share_dreams\": [\n                {\n                    \"uuid\": \"f2cb5cb4-22cf-4e69-a9f9-8a42c84b2827\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"profile\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"title\": \"꿈을 겨 꿔버린.\",\n                    \"lucy_count\": 1,\n                    \"dream_types\": [\n                        \"FALSE_AWAKE\"\n                    ],\n                    \"share_datetime\": \"2021-11-03T12:45:04\"\n                },\n                {\n                    \"uuid\": \"0e3918b1-003e-4089-8fb2-8ae1b319ef3f\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"profile\": \"https://s3-zamong-1.s3.ap-northeast-2.amazonaws.com/user/10_01.jpg\",\n                    \"title\": \"동생이 악어에 물리는꿈..\",\n                    \"lucy_count\": 0,\n                    \"dream_types\": [\n                        \"FALSE_AWAKE\"\n                    ],\n                    \"share_datetime\": \"2021-11-03T14:10:11\"\n                }\n            ],\n            \"total_page\": 1,\n            \"total_size\": 2\n        }\n    }\n}"
 								},
 								{
-									"name": "/ - 최근 공유된 꿈 목록 (최근순)",
+									"name": "/ - 공유된 꿈 목록 (최근순)",
 									"originalRequest": {
 										"method": "GET",
 										"header": [],
@@ -1757,7 +1757,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{PRODUCT_URL}}/dream/share/me?page=0&size=3",
+									"raw": "{{PRODUCT_URL}}/dream/share/me?page=0&size=5",
 									"host": [
 										"{{PRODUCT_URL}}"
 									],
@@ -1773,7 +1773,7 @@
 										},
 										{
 											"key": "size",
-											"value": "3"
+											"value": "5"
 										}
 									]
 								}
@@ -1924,7 +1924,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{PRODUCT_URL}}/dream/share/timetable?year=2021&month=9",
+									"raw": "{{PRODUCT_URL}}/dream/share/timetable?year=2021&month=11",
 									"host": [
 										"{{PRODUCT_URL}}"
 									],
@@ -1940,7 +1940,7 @@
 										},
 										{
 											"key": "month",
-											"value": "9"
+											"value": "11"
 										}
 									]
 								}
@@ -2045,7 +2045,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{PRODUCT_URL}}/dream/share/timetable/v2?year=2021&month=9",
+									"raw": "{{PRODUCT_URL}}/dream/share/timetable/v2?year=2021&month=10",
 									"host": [
 										"{{PRODUCT_URL}}"
 									],
@@ -2062,7 +2062,7 @@
 										},
 										{
 											"key": "month",
-											"value": "9"
+											"value": "10"
 										}
 									]
 								}
@@ -2175,6 +2175,84 @@
 					"name": "sell",
 					"item": [
 						{
+							"name": "/continue - 판매중인 꿈 목록",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{PRODUCT_URL}}/dream/sell/continue?page=0&size=4",
+									"host": [
+										"{{PRODUCT_URL}}"
+									],
+									"path": [
+										"dream",
+										"sell",
+										"continue"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/close - 판매 완료된 꿈 목록",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{PRODUCT_URL}}/dream/sell/close?page=0&size=3",
+									"host": [
+										"{{PRODUCT_URL}}"
+									],
+									"path": [
+										"dream",
+										"sell",
+										"close"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "/ - 판매꿈 작성",
 							"request": {
 								"auth": {
@@ -2191,7 +2269,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"title\": \"진짜 좋은 꿈 \",\n    \"content\": \"진짜 진짜 좋은 꿈을 꿨는데 그냥 주긴 아깝고 ...\",\n    \"dream_types\": [\"NIGHTMARE\", \"FALSE_AWAKE\"],\n    \"cost\": 17000\n}",
+									"raw": "{\n    \"title\": \"이거는 판매 완료될 꿈\",\n    \"content\": \"진짜 진짜 좋은 꿈을 꿨는데 그냥 주긴 아깝고 ...\",\n    \"dream_types\": [\"NIGHTMARE\", \"FALSE_AWAKE\"],\n    \"cost\": 17000\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2242,7 +2320,7 @@
 							"response": []
 						},
 						{
-							"name": "/sell/cost/{dream-uuid} - 판매꿈 가격 수정",
+							"name": "/cost/{dream-uuid} - 판매꿈 가격 수정",
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -2275,6 +2353,55 @@
 										"sell",
 										"cost",
 										"8ccea457-5c26-439a-8d28-3ebf17553fed"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/{dream-uuid} - 판매취소",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{PRODUCT_URL}}/dream/sell/aaa65672-24e7-493d-9e22-8c1eecd7cd12",
+									"host": [
+										"{{PRODUCT_URL}}"
+									],
+									"path": [
+										"dream",
+										"sell",
+										"aaa65672-24e7-493d-9e22-8c1eecd7cd12"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/{dream-uuid}/done - 판매 완료",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzU5OTc3NjIsImV4cCI6MTYzNjAwNDk2Miwic3ViIjoiNzM1OWZlZTUtNDI2Zi00NWY1LWJkMjQtY2M2NzVlN2JkZDEyIiwidHlwZSI6ImFjY2VzcyJ9.HrWWjcyXpWwzVN4_EUIxvvKrpnhkkM9Avf0uUE7lKOY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{PRODUCT_URL}}/dream/sell/93618cb0-7a66-4ba7-ba8f-d6b6321a4307/done",
+									"host": [
+										"{{PRODUCT_URL}}"
+									],
+									"path": [
+										"dream",
+										"sell",
+										"93618cb0-7a66-4ba7-ba8f-d6b6321a4307",
+										"done"
 									]
 								}
 							},
@@ -2376,13 +2503,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{PRODUCT_URL}}/dream/{{SHARE_DREAM_UUID}}",
+							"raw": "{{PRODUCT_URL}}/dream/b707f6f6-c9c7-4b38-8e45-7f73e82b8bb2",
 							"host": [
 								"{{PRODUCT_URL}}"
 							],
 							"path": [
 								"dream",
-								"{{SHARE_DREAM_UUID}}"
+								"b707f6f6-c9c7-4b38-8e45-7f73e82b8bb2"
 							]
 						},
 						"description": "# 꿈 삭제 API \n\n공유꿈만이 아니라 다른 꿈도 삭제할 수 있습니다"
