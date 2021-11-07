@@ -1742,7 +1742,7 @@
 							]
 						},
 						{
-							"name": "/me - 최근 작성한 공유 꿈",
+							"name": "/me - 작성한 공유 꿈",
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -1757,7 +1757,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{PRODUCT_URL}}/dream/share/me?page=0&size=5",
+									"raw": "{{PRODUCT_URL}}/dream/share/me?page=0&size=5&sort=lucy",
 									"host": [
 										"{{PRODUCT_URL}}"
 									],
@@ -1774,11 +1774,206 @@
 										{
 											"key": "size",
 											"value": "5"
+										},
+										{
+											"key": "sort",
+											"value": "lucy"
 										}
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "/me - 작성한 공유 꿈 (최근순)",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{PRODUCT_URL}}/dream/share/me?page=0&size=5&sort=created",
+											"host": [
+												"{{PRODUCT_URL}}"
+											],
+											"path": [
+												"dream",
+												"share",
+												"me"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "0"
+												},
+												{
+													"key": "size",
+													"value": "5"
+												},
+												{
+													"key": "sort",
+													"value": "created"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 07 Nov 2021 08:07:27 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"timestamp\": \"2021-11-07T17:07:27.143086\",\n    \"content\": {\n        \"collection_value\": true,\n        \"response\": {\n            \"share_dreams\": [\n                {\n                    \"uuid\": \"43d1b5a3-856c-4f2b-8c32-bd291260afe1\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"profile\": null,\n                    \"title\": \"꿈을 겨 꿔버린.\",\n                    \"created_at\": \"2021-11-04T00:55:11\",\n                    \"is_shared\": false\n                },\n                {\n                    \"uuid\": \"0e3918b1-003e-4089-8fb2-8ae1b319ef3f\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"profile\": null,\n                    \"title\": \"동생이 악어에 물리는꿈..\",\n                    \"created_at\": \"2021-11-04T00:34:38\",\n                    \"is_shared\": true\n                },\n                {\n                    \"uuid\": \"be6df9c5-7a27-4d39-9c7b-5f98db6a130f\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"profile\": null,\n                    \"title\": \"꿈을 겨 꿔버린.\",\n                    \"created_at\": \"2021-11-04T00:34:38\",\n                    \"is_shared\": false\n                }\n            ],\n            \"total_page\": 1,\n            \"total_size\": 3\n        }\n    }\n}"
+								},
+								{
+									"name": "/me - 작성한 공유 꿈 (루시순)",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{PRODUCT_URL}}/dream/share/me?page=0&size=5&sort=lucy",
+											"host": [
+												"{{PRODUCT_URL}}"
+											],
+											"path": [
+												"dream",
+												"share",
+												"me"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "0"
+												},
+												{
+													"key": "size",
+													"value": "5"
+												},
+												{
+													"key": "sort",
+													"value": "lucy"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 07 Nov 2021 08:08:00 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"timestamp\": \"2021-11-07T17:08:00.6692\",\n    \"content\": {\n        \"collection_value\": true,\n        \"response\": {\n            \"share_dreams\": [\n                {\n                    \"uuid\": \"0e3918b1-003e-4089-8fb2-8ae1b319ef3f\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"profile\": null,\n                    \"title\": \"동생이 악어에 물리는꿈..\",\n                    \"created_at\": \"2021-11-04T00:34:38\",\n                    \"is_shared\": true\n                },\n                {\n                    \"uuid\": \"be6df9c5-7a27-4d39-9c7b-5f98db6a130f\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"profile\": null,\n                    \"title\": \"꿈을 겨 꿔버린.\",\n                    \"created_at\": \"2021-11-04T00:34:38\",\n                    \"is_shared\": false\n                },\n                {\n                    \"uuid\": \"43d1b5a3-856c-4f2b-8c32-bd291260afe1\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"profile\": null,\n                    \"title\": \"꿈을 겨 꿔버린.\",\n                    \"created_at\": \"2021-11-04T00:55:11\",\n                    \"is_shared\": false\n                }\n            ],\n            \"total_page\": 1,\n            \"total_size\": 3\n        }\n    }\n}"
+								}
+							]
 						},
 						{
 							"name": "/follow - 팔로워 공유한 꿈 목록",
@@ -2406,6 +2601,272 @@
 								}
 							},
 							"response": []
+						}
+					]
+				},
+				{
+					"name": "interpretation",
+					"item": [
+						{
+							"name": "/ - 해몽 꿈 작성",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"꿈을.\",\n    \"content\": \"런 섬뜩한 꿈을 꿨는데.\",\n    \"quality\": \"GOOD\",\n    \"dream_types\": [\"FALSE_AWAKE\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{PRODUCT_URL}}/dream/interpretation",
+									"host": [
+										"{{PRODUCT_URL}}"
+									],
+									"path": [
+										"dream",
+										"interpretation"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/static - 기본 해몽 카테고리 목록",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{PRODUCT_URL}}/dream/interpretation/static",
+									"host": [
+										"{{PRODUCT_URL}}"
+									],
+									"path": [
+										"dream",
+										"interpretation",
+										"static"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "/static - 기본 해몽 카테고리 목록",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{PRODUCT_URL}}/dream/interpretation/static",
+											"host": [
+												"{{PRODUCT_URL}}"
+											],
+											"path": [
+												"dream",
+												"interpretation",
+												"static"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 06 Nov 2021 18:33:38 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"timestamp\": \"2021-11-07T03:33:38.546981\",\n    \"content\": {\n        \"collection_value\": true,\n        \"response\": {\n            \"interpretation_dreams\": [\n                {\n                    \"uuid\": \"1e7e1ab5-3d93-11ec-a1a9-0242ac110003\",\n                    \"dream_name\": \"돌아가신 가족이 나타난 꿈\"\n                },\n                {\n                    \"uuid\": \"2c6313de-3f29-11ec-a1a9-0242ac110003\",\n                    \"dream_name\": \"애인과 데이트한 꿈\"\n                },\n                {\n                    \"uuid\": \"2c71d50a-3f29-11ec-a1a9-0242ac110003\",\n                    \"dream_name\": \"용이 승천한 꿈\"\n                },\n                {\n                    \"uuid\": \"2c7e0f91-3f29-11ec-a1a9-0242ac110003\",\n                    \"dream_name\": \"햇빛이 화사했던 꿈\"\n                },\n                {\n                    \"uuid\": \"2c882572-3f29-11ec-a1a9-0242ac110003\",\n                    \"dream_name\": \"밤에 달이 빛난 꿈\"\n                },\n                {\n                    \"uuid\": \"2c917933-3f29-11ec-a1a9-0242ac110003\",\n                    \"dream_name\": \"음식을 먹고 배가 불렀던 꿈\"\n                },\n                {\n                    \"uuid\": \"2c98863b-3f29-11ec-a1a9-0242ac110003\",\n                    \"dream_name\": \"성적충동을 느낀 꿈\"\n                },\n                {\n                    \"uuid\": \"2ca030c9-3f29-11ec-a1a9-0242ac110003\",\n                    \"dream_name\": \"누군가가 죽을 것이라고 느낀 꿈\"\n                },\n                {\n                    \"uuid\": \"2ca9485e-3f29-11ec-a1a9-0242ac110003\",\n                    \"dream_name\": \"귀신이 나타난 꿈\"\n                }\n            ]\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "/static/{interpretation-uuid} - 기본 해몽 결과",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{PRODUCT_URL}}/dream/interpretation/static/1e7e1ab5-3d93-11ec-a1a9-0242ac110003",
+									"host": [
+										"{{PRODUCT_URL}}"
+									],
+									"path": [
+										"dream",
+										"interpretation",
+										"static",
+										"1e7e1ab5-3d93-11ec-a1a9-0242ac110003"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "/static/{interpretation-uuid} - 기본 해몽 결과",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{PRODUCT_URL}}/dream/interpretation/static/1e7e1ab5-3d93-11ec-a1a9-0242ac110003",
+											"host": [
+												"{{PRODUCT_URL}}"
+											],
+											"path": [
+												"dream",
+												"interpretation",
+												"static",
+												"1e7e1ab5-3d93-11ec-a1a9-0242ac110003"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 06 Nov 2021 18:33:40 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"timestamp\": \"2021-11-07T03:33:40.967641\",\n    \"content\": {\n        \"collection_value\": false,\n        \"response\": {\n            \"message\": \"당신에게 중요한 메시지를 전해주는 꿈입니다.\\\\n그것은 장래가 밝다는 것을 말하는 길몽인 경우도 있고 어떤 위험을 경고 하는 경우도 있습니다. 물론 죽은 사람의 꿈이 그 고인을 그립게 생각하는 마음의 표현일 수도 있습니다. \\\\n\\\\n직계 가족이나 연인, 친구 등 생전 당신과 특히 관계가 깊은 인물이 꿈에 나온다고 하면, 어떤 메시지를 전달하고있을 가능성이 높아지는 것 같습니다.\"\n        }\n    }\n}"
+								}
+							]
 						}
 					]
 				},
