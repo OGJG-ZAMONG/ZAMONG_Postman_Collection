@@ -1757,7 +1757,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{PRODUCT_URL}}/dream/share/me?page=0&size=5&sort=lucy",
+									"raw": "{{PRODUCT_URL}}/dream/share/me?page=0&size=5&sort=created",
 									"host": [
 										"{{PRODUCT_URL}}"
 									],
@@ -1777,7 +1777,7 @@
 										},
 										{
 											"key": "sort",
-											"value": "lucy"
+											"value": "created"
 										}
 									]
 								}
@@ -1972,6 +1972,119 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"status\": 200,\n    \"timestamp\": \"2021-11-07T17:08:00.6692\",\n    \"content\": {\n        \"collection_value\": true,\n        \"response\": {\n            \"share_dreams\": [\n                {\n                    \"uuid\": \"0e3918b1-003e-4089-8fb2-8ae1b319ef3f\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"profile\": null,\n                    \"title\": \"동생이 악어에 물리는꿈..\",\n                    \"created_at\": \"2021-11-04T00:34:38\",\n                    \"is_shared\": true\n                },\n                {\n                    \"uuid\": \"be6df9c5-7a27-4d39-9c7b-5f98db6a130f\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"profile\": null,\n                    \"title\": \"꿈을 겨 꿔버린.\",\n                    \"created_at\": \"2021-11-04T00:34:38\",\n                    \"is_shared\": false\n                },\n                {\n                    \"uuid\": \"43d1b5a3-856c-4f2b-8c32-bd291260afe1\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"profile\": null,\n                    \"title\": \"꿈을 겨 꿔버린.\",\n                    \"created_at\": \"2021-11-04T00:55:11\",\n                    \"is_shared\": false\n                }\n            ],\n            \"total_page\": 1,\n            \"total_size\": 3\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "/me/today - 오늘 작성한 꿈 목록",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{PRODUCT_URL}}/dream/share/me/today",
+									"host": [
+										"{{PRODUCT_URL}}"
+									],
+									"path": [
+										"dream",
+										"share",
+										"me",
+										"today"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "/me/today - 오늘 작성한 꿈 목록",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{PRODUCT_URL}}/dream/share/me/today",
+											"host": [
+												"{{PRODUCT_URL}}"
+											],
+											"path": [
+												"dream",
+												"share",
+												"me",
+												"today"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 08 Nov 2021 02:48:26 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"timestamp\": \"2021-11-08T11:48:26.976048\",\n    \"content\": {\n        \"collection_value\": true,\n        \"response\": {\n            \"share_dreams\": [\n                {\n                    \"uuid\": \"1aa8136e-fc5b-4e50-a6de-dfe314419816\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"profile\": \"https://s3-zamong-1.s3.ap-northeast-2.amazonaws.com/user/10_01.jpg\",\n                    \"title\": \"꿈을.\",\n                    \"created_at\": \"2021-11-08T11:48:24\",\n                    \"is_shared\": false\n                }\n            ],\n            \"total_page\": null,\n            \"total_size\": null\n        }\n    }\n}"
 								}
 							]
 						},
