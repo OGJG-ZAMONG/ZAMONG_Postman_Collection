@@ -1784,7 +1784,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{PRODUCT_URL}}/dream/share/me?page=0&size=5&sort=created&shared=true",
+									"raw": "{{PRODUCT_URL}}/dream/share/me?page=0&size=5&sort=lucy&shared=true,false",
 									"host": [
 										"{{PRODUCT_URL}}"
 									],
@@ -1804,11 +1804,11 @@
 										},
 										{
 											"key": "sort",
-											"value": "created"
+											"value": "lucy"
 										},
 										{
 											"key": "shared",
-											"value": "true"
+											"value": "true,false"
 										}
 									]
 								}
@@ -1820,7 +1820,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{PRODUCT_URL}}/dream/share/me?page=0&size=5&sort=created",
+											"raw": "{{PRODUCT_URL}}/dream/share/me?page=0&size=5&sort=created&shared=true,false",
 											"host": [
 												"{{PRODUCT_URL}}"
 											],
@@ -1841,6 +1841,10 @@
 												{
 													"key": "sort",
 													"value": "created"
+												},
+												{
+													"key": "shared",
+													"value": "true,false"
 												}
 											]
 										}
@@ -1895,7 +1899,7 @@
 										},
 										{
 											"key": "Date",
-											"value": "Sun, 07 Nov 2021 08:07:27 GMT"
+											"value": "Mon, 15 Nov 2021 01:27:26 GMT"
 										},
 										{
 											"key": "Keep-Alive",
@@ -1907,7 +1911,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"status\": 200,\n    \"timestamp\": \"2021-11-07T17:07:27.143086\",\n    \"content\": {\n        \"collection_value\": true,\n        \"response\": {\n            \"share_dreams\": [\n                {\n                    \"uuid\": \"43d1b5a3-856c-4f2b-8c32-bd291260afe1\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"profile\": null,\n                    \"title\": \"꿈을 겨 꿔버린.\",\n                    \"created_at\": \"2021-11-04T00:55:11\",\n                    \"is_shared\": false\n                },\n                {\n                    \"uuid\": \"0e3918b1-003e-4089-8fb2-8ae1b319ef3f\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"profile\": null,\n                    \"title\": \"동생이 악어에 물리는꿈..\",\n                    \"created_at\": \"2021-11-04T00:34:38\",\n                    \"is_shared\": true\n                },\n                {\n                    \"uuid\": \"be6df9c5-7a27-4d39-9c7b-5f98db6a130f\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"profile\": null,\n                    \"title\": \"꿈을 겨 꿔버린.\",\n                    \"created_at\": \"2021-11-04T00:34:38\",\n                    \"is_shared\": false\n                }\n            ],\n            \"total_page\": 1,\n            \"total_size\": 3\n        }\n    }\n}"
+									"body": "{\n    \"status\": 200,\n    \"timestamp\": \"2021-11-15T10:27:26.671069\",\n    \"content\": {\n        \"collection_value\": true,\n        \"response\": {\n            \"share_dreams\": [\n                {\n                    \"uuid\": \"674b2aed-6020-4ebd-a67c-1c34c8fb1126\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"profile\": null,\n                    \"title\": \"꿈을.\",\n                    \"created_at\": \"2021-11-09T20:08:43\",\n                    \"is_shared\": false\n                },\n                {\n                    \"uuid\": \"1aa8136e-fc5b-4e50-a6de-dfe314419816\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"profile\": null,\n                    \"title\": \"꿈을.\",\n                    \"created_at\": \"2021-11-08T11:48:24\",\n                    \"is_shared\": false\n                },\n                {\n                    \"uuid\": \"43d1b5a3-856c-4f2b-8c32-bd291260afe1\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"profile\": null,\n                    \"title\": \"꿈을 겨 꿔버린.\",\n                    \"created_at\": \"2021-11-04T00:55:11\",\n                    \"is_shared\": false\n                },\n                {\n                    \"uuid\": \"0e3918b1-003e-4089-8fb2-8ae1b319ef3f\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"profile\": null,\n                    \"title\": \"동생이 악어에 물리는꿈..\",\n                    \"created_at\": \"2021-11-04T00:34:38\",\n                    \"is_shared\": true\n                },\n                {\n                    \"uuid\": \"be6df9c5-7a27-4d39-9c7b-5f98db6a130f\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"profile\": null,\n                    \"title\": \"꿈을 겨 꿔버린.\",\n                    \"created_at\": \"2021-11-04T00:34:38\",\n                    \"is_shared\": true\n                }\n            ],\n            \"total_page\": 1,\n            \"total_size\": 5\n        }\n    }\n}"
 								},
 								{
 									"name": "/me - 작성한 공유 꿈 (루시순)",
@@ -1915,7 +1919,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{PRODUCT_URL}}/dream/share/me?page=0&size=5&sort=lucy",
+											"raw": "{{PRODUCT_URL}}/dream/share/me?page=0&size=5&sort=lucy&shared=true,false",
 											"host": [
 												"{{PRODUCT_URL}}"
 											],
@@ -1936,6 +1940,10 @@
 												{
 													"key": "sort",
 													"value": "lucy"
+												},
+												{
+													"key": "shared",
+													"value": "true,false"
 												}
 											]
 										}
