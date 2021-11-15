@@ -1003,7 +1003,7 @@
 								{
 									"key": "file",
 									"type": "file",
-									"src": "/Users/zuzu/Downloads/10_01.jpg"
+									"src": "/Users/zuzu/Downloads/93f05e91-ce88-4d80-8dec-900c1da41464 (1).jpg"
 								}
 							]
 						},
@@ -1089,6 +1089,40 @@
 							"path": [
 								"user",
 								"password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/search - 유저 아이디로 검색",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{PRODUCT_URL}}/user/search?query=helloworld",
+							"host": [
+								"{{PRODUCT_URL}}"
+							],
+							"path": [
+								"user",
+								"search"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "helloworld"
+								}
 							]
 						}
 					},
@@ -1513,14 +1547,7 @@
 							"name": "/ - 공유된 꿈 목록",
 							"request": {
 								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{accessToken}}",
-											"type": "string"
-										}
-									]
+									"type": "noauth"
 								},
 								"method": "GET",
 								"header": [],
@@ -1757,7 +1784,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{PRODUCT_URL}}/dream/share/me?page=0&size=5&sort=created",
+									"raw": "{{PRODUCT_URL}}/dream/share/me?page=0&size=5&sort=created&shared=true",
 									"host": [
 										"{{PRODUCT_URL}}"
 									],
@@ -1778,6 +1805,10 @@
 										{
 											"key": "sort",
 											"value": "created"
+										},
+										{
+											"key": "shared",
+											"value": "true"
 										}
 									]
 								}
@@ -1972,6 +2003,105 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"status\": 200,\n    \"timestamp\": \"2021-11-07T17:08:00.6692\",\n    \"content\": {\n        \"collection_value\": true,\n        \"response\": {\n            \"share_dreams\": [\n                {\n                    \"uuid\": \"0e3918b1-003e-4089-8fb2-8ae1b319ef3f\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"profile\": null,\n                    \"title\": \"동생이 악어에 물리는꿈..\",\n                    \"created_at\": \"2021-11-04T00:34:38\",\n                    \"is_shared\": true\n                },\n                {\n                    \"uuid\": \"be6df9c5-7a27-4d39-9c7b-5f98db6a130f\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"profile\": null,\n                    \"title\": \"꿈을 겨 꿔버린.\",\n                    \"created_at\": \"2021-11-04T00:34:38\",\n                    \"is_shared\": false\n                },\n                {\n                    \"uuid\": \"43d1b5a3-856c-4f2b-8c32-bd291260afe1\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"profile\": null,\n                    \"title\": \"꿈을 겨 꿔버린.\",\n                    \"created_at\": \"2021-11-04T00:55:11\",\n                    \"is_shared\": false\n                }\n            ],\n            \"total_page\": 1,\n            \"total_size\": 3\n        }\n    }\n}"
+								},
+								{
+									"name": "/me - 작성한 공유 꿈 (공유된 것만)",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{PRODUCT_URL}}/dream/share/me?page=0&size=5&sort=created&shared=true",
+											"host": [
+												"{{PRODUCT_URL}}"
+											],
+											"path": [
+												"dream",
+												"share",
+												"me"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "0"
+												},
+												{
+													"key": "size",
+													"value": "5"
+												},
+												{
+													"key": "sort",
+													"value": "created"
+												},
+												{
+													"key": "shared",
+													"value": "true"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 15 Nov 2021 01:17:31 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"timestamp\": \"2021-11-15T10:17:31.495035\",\n    \"content\": {\n        \"collection_value\": true,\n        \"response\": {\n            \"share_dreams\": [\n                {\n                    \"uuid\": \"0e3918b1-003e-4089-8fb2-8ae1b319ef3f\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"profile\": null,\n                    \"title\": \"동생이 악어에 물리는꿈..\",\n                    \"created_at\": \"2021-11-04T00:34:38\",\n                    \"is_shared\": true\n                },\n                {\n                    \"uuid\": \"be6df9c5-7a27-4d39-9c7b-5f98db6a130f\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"profile\": null,\n                    \"title\": \"꿈을 겨 꿔버린.\",\n                    \"created_at\": \"2021-11-04T00:34:38\",\n                    \"is_shared\": true\n                }\n            ],\n            \"total_page\": 1,\n            \"total_size\": 2\n        }\n    }\n}"
 								}
 							]
 						},
@@ -2617,14 +2747,7 @@
 							"name": "/continue - 판매중인 꿈 목록",
 							"request": {
 								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{accessToken}}",
-											"type": "string"
-										}
-									]
+									"type": "noauth"
 								},
 								"method": "GET",
 								"header": [],
@@ -2728,7 +2851,7 @@
 										},
 										{
 											"key": "Date",
-											"value": "Tue, 09 Nov 2021 11:27:02 GMT"
+											"value": "Mon, 15 Nov 2021 00:49:15 GMT"
 										},
 										{
 											"key": "Keep-Alive",
@@ -2740,7 +2863,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"status\": 200,\n    \"timestamp\": \"2021-11-09T20:27:02.473816\",\n    \"content\": {\n        \"collection_value\": true,\n        \"response\": {\n            \"sell_dreams\": [\n                {\n                    \"uuid\": \"29bf9405-c96b-4cd7-a5e4-5b537d8511f8\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"title\": \"진짜 좋은 꿈 \",\n                    \"dream_types\": [\n                        \"NIGHTMARE\",\n                        \"FALSE_AWAKE\"\n                    ],\n                    \"updated_at\": \"2021-11-04T01:11:54\",\n                    \"cost\": 17000\n                }\n            ],\n            \"total_page\": 1,\n            \"total_size\": 1\n        }\n    }\n}"
+									"body": "{\n    \"status\": 200,\n    \"timestamp\": \"2021-11-15T09:49:15.515452\",\n    \"content\": {\n        \"collection_value\": true,\n        \"response\": {\n            \"sell_dreams\": [\n                {\n                    \"uuid\": \"29bf9405-c96b-4cd7-a5e4-5b537d8511f8\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"title\": \"진짜 좋은 꿈 \",\n                    \"dream_types\": [\n                        \"NIGHTMARE\",\n                        \"FALSE_AWAKE\"\n                    ],\n                    \"updated_at\": \"2021-11-15T09:01:22\",\n                    \"cost\": 13043,\n                    \"user\": {\n                        \"uuid\": \"7359fee5-426f-45f5-bd24-cc675e7bdd12\",\n                        \"id\": \"helloworld\",\n                        \"profile\": \"https://s3-zamong-1.s3.ap-northeast-2.amazonaws.com/user/10_01.jpg\"\n                    }\n                }\n            ],\n            \"total_page\": 1,\n            \"total_size\": 1\n        }\n    }\n}"
 								}
 							]
 						},
@@ -2782,7 +2905,100 @@
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "/continue/me - 내가 판매중인 꿈 목록",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{PRODUCT_URL}}/dream/sell/continue/me?page=0&size=3",
+											"host": [
+												"{{PRODUCT_URL}}"
+											],
+											"path": [
+												"dream",
+												"sell",
+												"continue",
+												"me"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "0"
+												},
+												{
+													"key": "size",
+													"value": "3"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 11 Nov 2021 10:26:36 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"timestamp\": \"2021-11-11T19:26:36.661185\",\n    \"content\": {\n        \"collection_value\": true,\n        \"response\": {\n            \"sell_dreams\": [\n                {\n                    \"uuid\": \"29bf9405-c96b-4cd7-a5e4-5b537d8511f8\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"title\": \"진짜 좋은 꿈 \",\n                    \"dream_types\": [\n                        \"NIGHTMARE\",\n                        \"FALSE_AWAKE\"\n                    ],\n                    \"updated_at\": \"2021-11-04T01:11:54\",\n                    \"cost\": 17000,\n                    \"user\": {\n                        \"uuid\": \"7359fee5-426f-45f5-bd24-cc675e7bdd12\",\n                        \"id\": \"helloworld\",\n                        \"profile\": \"https://s3-zamong-1.s3.ap-northeast-2.amazonaws.com/user/10_01.jpg\"\n                    }\n                }\n            ],\n            \"total_page\": 1,\n            \"total_size\": 1\n        }\n    }\n}"
+								}
+							]
 						},
 						{
 							"name": "/close - 나의 판매 완료된 꿈 목록",
@@ -2823,7 +3039,7 @@
 							},
 							"response": [
 								{
-									"name": "/close - 판매 완료된 꿈 목록",
+									"name": "/close - 나의 판매 완료된 꿈 목록",
 									"originalRequest": {
 										"method": "GET",
 										"header": [],
@@ -2899,7 +3115,7 @@
 										},
 										{
 											"key": "Date",
-											"value": "Tue, 09 Nov 2021 11:27:27 GMT"
+											"value": "Thu, 11 Nov 2021 10:26:29 GMT"
 										},
 										{
 											"key": "Keep-Alive",
@@ -2911,7 +3127,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"status\": 200,\n    \"timestamp\": \"2021-11-09T20:27:27.627665\",\n    \"content\": {\n        \"collection_value\": true,\n        \"response\": {\n            \"sell_dreams\": [\n                {\n                    \"uuid\": \"aaa65672-24e7-493d-9e22-8c1eecd7cd12\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"title\": \"이거는 판매 완료될 꿈\",\n                    \"dream_types\": [\n                        \"FALSE_AWAKE\",\n                        \"NIGHTMARE\"\n                    ],\n                    \"updated_at\": \"2021-11-05T01:10:44\",\n                    \"cost\": 17000\n                },\n                {\n                    \"uuid\": \"93618cb0-7a66-4ba7-ba8f-d6b6321a4307\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"title\": \"에베ㅔ베베베베베베베베베베베베벱베ㅔ\",\n                    \"dream_types\": [\n                        \"NIGHTMARE\",\n                        \"FALSE_AWAKE\"\n                    ],\n                    \"updated_at\": \"2021-11-04T14:29:51\",\n                    \"cost\": 17000\n                }\n            ],\n            \"total_page\": 1,\n            \"total_size\": 2\n        }\n    }\n}"
+									"body": "{\n    \"status\": 200,\n    \"timestamp\": \"2021-11-11T19:26:29.57714\",\n    \"content\": {\n        \"collection_value\": true,\n        \"response\": {\n            \"sell_dreams\": [\n                {\n                    \"uuid\": \"aaa65672-24e7-493d-9e22-8c1eecd7cd12\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"title\": \"이거는 판매 완료될 꿈\",\n                    \"dream_types\": [\n                        \"FALSE_AWAKE\",\n                        \"NIGHTMARE\"\n                    ],\n                    \"updated_at\": \"2021-11-05T01:10:44\",\n                    \"cost\": 17000,\n                    \"user\": {\n                        \"uuid\": \"7359fee5-426f-45f5-bd24-cc675e7bdd12\",\n                        \"id\": \"helloworld\",\n                        \"profile\": \"https://s3-zamong-1.s3.ap-northeast-2.amazonaws.com/user/10_01.jpg\"\n                    }\n                },\n                {\n                    \"uuid\": \"93618cb0-7a66-4ba7-ba8f-d6b6321a4307\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"title\": \"에베ㅔ베베베베베베베베베베베베벱베ㅔ\",\n                    \"dream_types\": [\n                        \"NIGHTMARE\",\n                        \"FALSE_AWAKE\"\n                    ],\n                    \"updated_at\": \"2021-11-04T14:29:51\",\n                    \"cost\": 17000,\n                    \"user\": {\n                        \"uuid\": \"7359fee5-426f-45f5-bd24-cc675e7bdd12\",\n                        \"id\": \"helloworld\",\n                        \"profile\": \"https://s3-zamong-1.s3.ap-northeast-2.amazonaws.com/user/10_01.jpg\"\n                    }\n                }\n            ],\n            \"total_page\": 1,\n            \"total_size\": 2\n        }\n    }\n}"
 								}
 							]
 						},
@@ -2968,14 +3184,14 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "{{PRODUCT_URL}}/dream/sell/8ccea457-5c26-439a-8d28-3ebf17553fed/request",
+									"raw": "{{PRODUCT_URL}}/dream/sell/29bf9405-c96b-4cd7-a5e4-5b537d8511f8/request",
 									"host": [
 										"{{PRODUCT_URL}}"
 									],
 									"path": [
 										"dream",
 										"sell",
-										"8ccea457-5c26-439a-8d28-3ebf17553fed",
+										"29bf9405-c96b-4cd7-a5e4-5b537d8511f8",
 										"request"
 									]
 								}
@@ -3007,7 +3223,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{PRODUCT_URL}}/dream/sell/cost/8ccea457-5c26-439a-8d28-3ebf17553fed",
+									"raw": "{{PRODUCT_URL}}/dream/sell/cost/29bf9405-c96b-4cd7-a5e4-5b537d8511f8",
 									"host": [
 										"{{PRODUCT_URL}}"
 									],
@@ -3015,7 +3231,7 @@
 										"dream",
 										"sell",
 										"cost",
-										"8ccea457-5c26-439a-8d28-3ebf17553fed"
+										"29bf9405-c96b-4cd7-a5e4-5b537d8511f8"
 									]
 								}
 							},
@@ -3071,7 +3287,7 @@
 							"response": []
 						},
 						{
-							"name": "/search",
+							"name": "/search - 판매꿈 제목과 유형으로 검색",
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -3107,7 +3323,314 @@
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "/search",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{PRODUCT_URL}}/dream/sell/search?title=꿈&types=FALSE_AWAKE,TAEMONG,LUCID_DREAM",
+											"host": [
+												"{{PRODUCT_URL}}"
+											],
+											"path": [
+												"dream",
+												"sell",
+												"search"
+											],
+											"query": [
+												{
+													"key": "title",
+													"value": "꿈"
+												},
+												{
+													"key": "types",
+													"value": "FALSE_AWAKE,TAEMONG,LUCID_DREAM"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 11 Nov 2021 10:22:17 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"timestamp\": \"2021-11-11T19:22:17.831487\",\n    \"content\": {\n        \"collection_value\": true,\n        \"response\": {\n            \"sell_dreams\": [\n                {\n                    \"uuid\": \"aaa65672-24e7-493d-9e22-8c1eecd7cd12\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"title\": \"이거는 판매 완료될 꿈\",\n                    \"dream_types\": [\n                        \"FALSE_AWAKE\",\n                        \"NIGHTMARE\"\n                    ],\n                    \"updated_at\": \"2021-11-05T01:10:44\",\n                    \"cost\": 17000,\n                    \"user\": {\n                        \"uuid\": \"7359fee5-426f-45f5-bd24-cc675e7bdd12\",\n                        \"id\": \"helloworld\",\n                        \"profile\": \"https://s3-zamong-1.s3.ap-northeast-2.amazonaws.com/user/10_01.jpg\"\n                    }\n                },\n                {\n                    \"uuid\": \"29bf9405-c96b-4cd7-a5e4-5b537d8511f8\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"title\": \"진짜 좋은 꿈 \",\n                    \"dream_types\": [\n                        \"NIGHTMARE\",\n                        \"FALSE_AWAKE\"\n                    ],\n                    \"updated_at\": \"2021-11-04T01:11:54\",\n                    \"cost\": 17000,\n                    \"user\": {\n                        \"uuid\": \"7359fee5-426f-45f5-bd24-cc675e7bdd12\",\n                        \"id\": \"helloworld\",\n                        \"profile\": \"https://s3-zamong-1.s3.ap-northeast-2.amazonaws.com/user/10_01.jpg\"\n                    }\n                }\n            ],\n            \"total_page\": null,\n            \"total_size\": null\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "/{dream-uuid} - 판매꿈 상세정보",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{PRODUCT_URL}}/dream/sell/29bf9405-c96b-4cd7-a5e4-5b537d8511f8",
+									"host": [
+										"{{PRODUCT_URL}}"
+									],
+									"path": [
+										"dream",
+										"sell",
+										"29bf9405-c96b-4cd7-a5e4-5b537d8511f8"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "/{dream-uuid}",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{PRODUCT_URL}}/dream/sell/29bf9405-c96b-4cd7-a5e4-5b537d8511f8",
+											"host": [
+												"{{PRODUCT_URL}}"
+											],
+											"path": [
+												"dream",
+												"sell",
+												"29bf9405-c96b-4cd7-a5e4-5b537d8511f8"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 14 Nov 2021 23:29:56 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"timestamp\": \"2021-11-15T08:29:56.389846\",\n    \"content\": {\n        \"collection_value\": false,\n        \"response\": {\n            \"uuid\": \"29bf9405-c96b-4cd7-a5e4-5b537d8511f8\",\n            \"title\": \"진짜 좋은 꿈 \",\n            \"content\": \"진짜 진짜 좋은 꿈을 꿨는데 그냥 주긴 아깝고 ...\",\n            \"updated_at\": \"2021-11-04T01:11:54\",\n            \"dream_types\": [\n                \"NIGHTMARE\",\n                \"FALSE_AWAKE\"\n            ],\n            \"attachment_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n            \"cost\": 17000,\n            \"status\": \"PENDING\",\n            \"user\": {\n                \"uuid\": \"7359fee5-426f-45f5-bd24-cc675e7bdd12\",\n                \"id\": \"helloworld\",\n                \"profile\": \"https://s3-zamong-1.s3.ap-northeast-2.amazonaws.com/user/10_01.jpg\"\n            }\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "/{dream-uuid}/accept - 꿈  구매요청 수락",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{PRODUCT_URL}}/dream/sell/29bf9405-c96b-4cd7-a5e4-5b537d8511f8/accept",
+									"host": [
+										"{{PRODUCT_URL}}"
+									],
+									"path": [
+										"dream",
+										"sell",
+										"29bf9405-c96b-4cd7-a5e4-5b537d8511f8",
+										"accept"
+									]
+								},
+								"description": "# 꿈 구매요청 수락 \n\n구매요청을 수락하면 채팅방이 생성되고 채팅방의 아이디가 생성된다."
+							},
+							"response": [
+								{
+									"name": "/{dream-uuid}/accept - 꿈  구매요청 수락",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{PRODUCT_URL}}/dream/sell/29bf9405-c96b-4cd7-a5e4-5b537d8511f8/accept",
+											"host": [
+												"{{PRODUCT_URL}}"
+											],
+											"path": [
+												"dream",
+												"sell",
+												"29bf9405-c96b-4cd7-a5e4-5b537d8511f8",
+												"accept"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 15 Nov 2021 00:23:04 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"timestamp\": \"2021-11-15T09:23:04.236593\",\n    \"content\": {\n        \"collection_value\": false,\n        \"response\": {\n            \"message\": \"a1b342a4-f7b7-4ff6-8577-13fabfea226d\"\n        }\n    }\n}"
+								}
+							]
 						}
 					]
 				},
@@ -3131,7 +3654,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"title\": \"꿈을.\",\n    \"content\": \"런 섬뜩한 꿈을 꿨는데.\",\n    \"quality\": \"GOOD\",\n    \"dream_types\": [\"FALSE_AWAKE\"]\n}",
+									"raw": "{\n    \"title\": \"해몽 꾸움\",\n    \"content\": \"런 섬뜩한 꿈을 꿨는데.\",\n    \"quality\": \"BAD\",\n    \"dream_types\": [\"FALSE_AWAKE\", \"LUCID_DREAM\"]\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -3149,7 +3672,226 @@
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "/ - 해몽 꿈 작성",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"title\": \"해몽 꾸움\",\n    \"content\": \"런 섬뜩한 꿈을 꿨는데.\",\n    \"quality\": \"BAD\",\n    \"dream_types\": [\"FALSE_AWAKE\", \"LUCID_DREAM\"]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{PRODUCT_URL}}/dream/interpretation",
+											"host": [
+												"{{PRODUCT_URL}}"
+											],
+											"path": [
+												"dream",
+												"interpretation"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 11 Nov 2021 23:40:13 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 201,\n    \"timestamp\": \"2021-11-12T08:40:13.517698\",\n    \"content\": {\n        \"collection_value\": false,\n        \"response\": {\n            \"uuid\": \"14051553-040b-4616-af40-3e3c0172f9f7\",\n            \"created_at\": \"2021-11-12T08:40:13.409252\",\n            \"updated_at\": \"2021-11-12T08:40:13.409252\"\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "/ - 해몽꿈 목록",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{PRODUCT_URL}}/dream/interpretation?page=0&size=3",
+									"host": [
+										"{{PRODUCT_URL}}"
+									],
+									"path": [
+										"dream",
+										"interpretation"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "/ - 해몽꿈 목록",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{PRODUCT_URL}}/dream/interpretation?page=0&size=3",
+											"host": [
+												"{{PRODUCT_URL}}"
+											],
+											"path": [
+												"dream",
+												"interpretation"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "0"
+												},
+												{
+													"key": "size",
+													"value": "3"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 11 Nov 2021 23:40:17 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"timestamp\": \"2021-11-12T08:40:17.114958\",\n    \"content\": {\n        \"collection_value\": true,\n        \"response\": {\n            \"interpretation_dreams\": [\n                {\n                    \"uuid\": \"14051553-040b-4616-af40-3e3c0172f9f7\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"title\": \"해몽 꾸움\",\n                    \"dream_types\": [\n                        \"FALSE_AWAKE\",\n                        \"LUCID_DREAM\"\n                    ],\n                    \"updated_at\": \"2021-11-12T08:40:13\",\n                    \"user\": {\n                        \"uuid\": \"7359fee5-426f-45f5-bd24-cc675e7bdd12\",\n                        \"id\": \"helloworld\",\n                        \"profile\": \"https://s3-zamong-1.s3.ap-northeast-2.amazonaws.com/user/10_01.jpg\"\n                    }\n                },\n                {\n                    \"uuid\": \"9b56a5f4-11a8-46bc-89d4-e94678366b68\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"title\": \"꿈을.\",\n                    \"dream_types\": [\n                        \"FALSE_AWAKE\"\n                    ],\n                    \"updated_at\": \"2021-11-07T13:15:23\",\n                    \"user\": {\n                        \"uuid\": \"7359fee5-426f-45f5-bd24-cc675e7bdd12\",\n                        \"id\": \"helloworld\",\n                        \"profile\": \"https://s3-zamong-1.s3.ap-northeast-2.amazonaws.com/user/10_01.jpg\"\n                    }\n                }\n            ],\n            \"total_page\": 1,\n            \"total_size\": 2\n        }\n    }\n}"
+								}
+							]
 						},
 						{
 							"name": "/static - 기본 해몽 카테고리 목록",
@@ -3372,6 +4114,238 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"status\": 200,\n    \"timestamp\": \"2021-11-07T03:33:40.967641\",\n    \"content\": {\n        \"collection_value\": false,\n        \"response\": {\n            \"message\": \"당신에게 중요한 메시지를 전해주는 꿈입니다.\\\\n그것은 장래가 밝다는 것을 말하는 길몽인 경우도 있고 어떤 위험을 경고 하는 경우도 있습니다. 물론 죽은 사람의 꿈이 그 고인을 그립게 생각하는 마음의 표현일 수도 있습니다. \\\\n\\\\n직계 가족이나 연인, 친구 등 생전 당신과 특히 관계가 깊은 인물이 꿈에 나온다고 하면, 어떤 메시지를 전달하고있을 가능성이 높아지는 것 같습니다.\"\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "/search - 해몽꿈 제목과 유형으로 검색",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{PRODUCT_URL}}/dream/interpretation/search?title=꿈&types=LUCID_DREAM,FALSE_AWAKE",
+									"host": [
+										"{{PRODUCT_URL}}"
+									],
+									"path": [
+										"dream",
+										"interpretation",
+										"search"
+									],
+									"query": [
+										{
+											"key": "title",
+											"value": "꿈"
+										},
+										{
+											"key": "types",
+											"value": "LUCID_DREAM,FALSE_AWAKE"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "/search - 해몽꿈 제목과 유형으로 검색",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{PRODUCT_URL}}/dream/interpretation/search?title=꿈&types=LUCID_DREAM,FALSE_AWAKE",
+											"host": [
+												"{{PRODUCT_URL}}"
+											],
+											"path": [
+												"dream",
+												"interpretation",
+												"search"
+											],
+											"query": [
+												{
+													"key": "title",
+													"value": "꿈"
+												},
+												{
+													"key": "types",
+													"value": "LUCID_DREAM,FALSE_AWAKE"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 14 Nov 2021 23:44:27 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"timestamp\": \"2021-11-15T08:44:27.737095\",\n    \"content\": {\n        \"collection_value\": true,\n        \"response\": {\n            \"interpretation_dreams\": [\n                {\n                    \"uuid\": \"9b56a5f4-11a8-46bc-89d4-e94678366b68\",\n                    \"default_posting_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                    \"title\": \"꿈을.\",\n                    \"dream_types\": [\n                        \"FALSE_AWAKE\"\n                    ],\n                    \"updated_at\": \"2021-11-07T13:15:23\",\n                    \"user\": {\n                        \"uuid\": \"7359fee5-426f-45f5-bd24-cc675e7bdd12\",\n                        \"id\": \"helloworld\",\n                        \"profile\": \"https://s3-zamong-1.s3.ap-northeast-2.amazonaws.com/user/10_01.jpg\"\n                    }\n                }\n            ],\n            \"total_page\": null,\n            \"total_size\": null\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "/{dream-uuid}  - 해몽꿈 상세정보",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{PRODUCT_URL}}/dream/interpretation/14051553-040b-4616-af40-3e3c0172f9f7",
+									"host": [
+										"{{PRODUCT_URL}}"
+									],
+									"path": [
+										"dream",
+										"interpretation",
+										"14051553-040b-4616-af40-3e3c0172f9f7"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "/{dream-uuid}  - 해몽꿈 상세정보",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{PRODUCT_URL}}/dream/interpretation/14051553-040b-4616-af40-3e3c0172f9f7",
+											"host": [
+												"{{PRODUCT_URL}}"
+											],
+											"path": [
+												"dream",
+												"interpretation",
+												"14051553-040b-4616-af40-3e3c0172f9f7"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 14 Nov 2021 23:44:17 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"timestamp\": \"2021-11-15T08:44:17.028006\",\n    \"content\": {\n        \"collection_value\": false,\n        \"response\": {\n            \"uuid\": \"14051553-040b-4616-af40-3e3c0172f9f7\",\n            \"title\": \"해몽 꾸움\",\n            \"content\": \"런 섬뜩한 꿈을 꿨는데.\",\n            \"updated_at\": \"2021-11-12T08:40:13\",\n            \"dream_types\": [\n                \"FALSE_AWAKE\",\n                \"LUCID_DREAM\"\n            ],\n            \"attachment_image\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n            \"user\": {\n                \"uuid\": \"7359fee5-426f-45f5-bd24-cc675e7bdd12\",\n                \"id\": \"helloworld\",\n                \"profile\": \"https://s3-zamong-1.s3.ap-northeast-2.amazonaws.com/user/10_01.jpg\"\n            }\n        }\n    }\n}"
 								}
 							]
 						}
