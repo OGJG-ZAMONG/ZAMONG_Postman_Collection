@@ -2516,46 +2516,6 @@
 							"response": []
 						},
 						{
-							"name": "/image/{dream-uuid} - 꿈 이미지 수정",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{accessToken}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "file",
-											"type": "file",
-											"src": "/Users/zuzu/Downloads/2. 프로세스정의서_2조.jpg"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{PRODUCT_URL}}/dream/share/image/16be16fc-a5df-404d-8e6b-8b3018d60da4",
-									"host": [
-										"{{PRODUCT_URL}}"
-									],
-									"path": [
-										"dream",
-										"share",
-										"image",
-										"16be16fc-a5df-404d-8e6b-8b3018d60da4"
-									]
-								}
-							},
-							"response": []
-						},
-						{
 							"name": "/{dream-uuid}/lucy - 좋아요(루시)",
 							"request": {
 								"auth": {
@@ -3177,6 +3137,44 @@
 							"response": []
 						},
 						{
+							"name": "/{dream-uuid} - 판매꿈 전체 수정",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"나 꿈속에서 꿈인거 알아차리고 깨어남\",\n    \"content\": \"내꿈 상황은 소묘실기보려고 학교반에 앉아서 대기상태. 거기에 애들도 많았었고 그냥 수능시험보는거랑 똑같았음 자리배치도ㅇㅇ\\n그렇게 대기하고있다가 쌤오셨는데 현실에서는 무용쌤이 꿈에서는 미술쌤으로 등장하셨음\\n여기서 약간 어 뭐지? 저쌤 무용쌤이셨는데? 이생각들고 여기서 이상함을 느낌 그렇지만 아직까지 자각은 못함\\n암튼 그쌤이 들어오셔서 시험보는방법 설명하고나서 갑자기 나를 지목하더니 \\\"너 체육복입고 학교오고싶었다메?\\\" 이러면서 시비터는거임; 알고보니 담임쌤한테 바라는점 쓰라고 할때 나는 체육복입고 등교하게해주세요 라고 썼더라고\",\n    \"dream_types\": [\"WET_DREAM\"],\n    \"cost\": 2000\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{PRODUCT_URL}}/dream/sell/29bf9405-c96b-4cd7-a5e4-5b537d8511f8",
+									"host": [
+										"{{PRODUCT_URL}}"
+									],
+									"path": [
+										"dream",
+										"sell",
+										"29bf9405-c96b-4cd7-a5e4-5b537d8511f8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "/{dream-uuid}/request - 꿈 구매요청",
 							"request": {
 								"auth": {
@@ -3428,6 +3426,16 @@
 						{
 							"name": "/{dream-uuid} - 판매꿈 상세정보",
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
 								"method": "GET",
 								"header": [],
 								"url": {
@@ -3677,6 +3685,134 @@
 									"path": [
 										"dream",
 										"interpretation"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "/ - 해몽 꿈 작성",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"title\": \"해몽 꾸움\",\n    \"content\": \"런 섬뜩한 꿈을 꿨는데.\",\n    \"quality\": \"BAD\",\n    \"dream_types\": [\"FALSE_AWAKE\", \"LUCID_DREAM\"]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{PRODUCT_URL}}/dream/interpretation",
+											"host": [
+												"{{PRODUCT_URL}}"
+											],
+											"path": [
+												"dream",
+												"interpretation"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 11 Nov 2021 23:40:13 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 201,\n    \"timestamp\": \"2021-11-12T08:40:13.517698\",\n    \"content\": {\n        \"collection_value\": false,\n        \"response\": {\n            \"uuid\": \"14051553-040b-4616-af40-3e3c0172f9f7\",\n            \"created_at\": \"2021-11-12T08:40:13.409252\",\n            \"updated_at\": \"2021-11-12T08:40:13.409252\"\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "/{dream-uuid} - 해몽 꿈 전체 수정",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"해몽 꾸움\",\n    \"content\": \"런 섬뜩한 꿈을 꿨는데.\",\n    \"quality\": \"BAD\",\n    \"dream_types\": [\"FALSE_AWAKE\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{PRODUCT_URL}}/dream/interpretation/9b56a5f4-11a8-46bc-89d4-e94678366b68",
+									"host": [
+										"{{PRODUCT_URL}}"
+									],
+									"path": [
+										"dream",
+										"interpretation",
+										"9b56a5f4-11a8-46bc-89d4-e94678366b68"
 									]
 								}
 							},
@@ -4360,6 +4496,45 @@
 					]
 				},
 				{
+					"name": "/image/{dream-uuid} - 꿈 이미지 수정",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/zuzu/Downloads/10_01.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{PRODUCT_URL}}/dream/image/29bf9405-c96b-4cd7-a5e4-5b537d8511f8",
+							"host": [
+								"{{PRODUCT_URL}}"
+							],
+							"path": [
+								"dream",
+								"image",
+								"29bf9405-c96b-4cd7-a5e4-5b537d8511f8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "/dream-types/{dream-uuid} - 꿈 유형 수정",
 					"request": {
 						"auth": {
@@ -4399,6 +4574,45 @@
 					"response": []
 				},
 				{
+					"name": "/content/{dream-uuid} - 꿈 내용 수정",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"content\": \"나 꿈속에서 꿈인거 알아차리고 깨어남......\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{PRODUCT_URL}}/dream/content/29bf9405-c96b-4cd7-a5e4-5b537d8511f8",
+							"host": [
+								"{{PRODUCT_URL}}"
+							],
+							"path": [
+								"dream",
+								"content",
+								"29bf9405-c96b-4cd7-a5e4-5b537d8511f8"
+							]
+						},
+						"description": "# 꿈 제목 수정 \n\n적당히 적당히 넣으면 돼요"
+					},
+					"response": []
+				},
+				{
 					"name": "/title/{dream-uuid} - 꿈 제목 수정",
 					"request": {
 						"auth": {
@@ -4423,14 +4637,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{PRODUCT_URL}}/dream/title/{{SHARE_DREAM_UUID}}",
+							"raw": "{{PRODUCT_URL}}/dream/title/29bf9405-c96b-4cd7-a5e4-5b537d8511f8",
 							"host": [
 								"{{PRODUCT_URL}}"
 							],
 							"path": [
 								"dream",
 								"title",
-								"{{SHARE_DREAM_UUID}}"
+								"29bf9405-c96b-4cd7-a5e4-5b537d8511f8"
 							]
 						},
 						"description": "# 꿈 제목 수정 \n\n적당히 적당히 넣으면 돼요"
