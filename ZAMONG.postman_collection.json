@@ -983,6 +983,43 @@
 					"response": []
 				},
 				{
+					"name": "/follow - 팔로우 취소하기",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_uuid\": \"54edb5b9-3748-48c6-ae33-cafa20ae701b\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{PRODUCT_URL}}/user/follow",
+							"host": [
+								"{{PRODUCT_URL}}"
+							],
+							"path": [
+								"user",
+								"follow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "/{user-uuid}/profile - 프로필 수정",
 					"request": {
 						"auth": {
@@ -1784,7 +1821,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{PRODUCT_URL}}/dream/share/me?page=0&size=5&sort=lucy&shared=true,false",
+									"raw": "{{PRODUCT_URL}}/dream/share/me?page=0&size=5&sort=lucy&shared=false",
 									"host": [
 										"{{PRODUCT_URL}}"
 									],
@@ -1808,7 +1845,7 @@
 										},
 										{
 											"key": "shared",
-											"value": "true,false"
+											"value": "false"
 										}
 									]
 								}
@@ -1820,7 +1857,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{PRODUCT_URL}}/dream/share/me?page=0&size=5&sort=created&shared=true,false",
+											"raw": "{{PRODUCT_URL}}/dream/share/me?page=0&size=5&sort=created&shared=false",
 											"host": [
 												"{{PRODUCT_URL}}"
 											],
@@ -1844,7 +1881,7 @@
 												},
 												{
 													"key": "shared",
-													"value": "true,false"
+													"value": "false"
 												}
 											]
 										}
@@ -1919,7 +1956,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{PRODUCT_URL}}/dream/share/me?page=0&size=5&sort=lucy&shared=true,false",
+											"raw": "{{PRODUCT_URL}}/dream/share/me?page=0&size=5&sort=lucy&shared=false",
 											"host": [
 												"{{PRODUCT_URL}}"
 											],
@@ -1943,7 +1980,7 @@
 												},
 												{
 													"key": "shared",
-													"value": "true,false"
+													"value": "false"
 												}
 											]
 										}
