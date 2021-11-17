@@ -4734,7 +4734,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"content\": \"Hello World1\",\n    \"p_comment\": null\n}",
+							"raw": "{\n    \"content\": \"안녕하세요요요요\",\n    \"p_comment\": null\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4742,13 +4742,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{PRODUCT_URL}}/dream/3c0fc1bd-1389-4189-b16e-4e1fb343f7ba/comment",
+							"raw": "{{PRODUCT_URL}}/dream/29bf9405-c96b-4cd7-a5e4-5b537d8511f8/comment",
 							"host": [
 								"{{PRODUCT_URL}}"
 							],
 							"path": [
 								"dream",
-								"3c0fc1bd-1389-4189-b16e-4e1fb343f7ba",
+								"29bf9405-c96b-4cd7-a5e4-5b537d8511f8",
 								"comment"
 							]
 						}
@@ -4952,13 +4952,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{PRODUCT_URL}}/dream/3c0fc1bd-1389-4189-b16e-4e1fb343f7ba/comment",
+							"raw": "{{PRODUCT_URL}}/dream/29bf9405-c96b-4cd7-a5e4-5b537d8511f8/comment",
 							"host": [
 								"{{PRODUCT_URL}}"
 							],
 							"path": [
 								"dream",
-								"3c0fc1bd-1389-4189-b16e-4e1fb343f7ba",
+								"29bf9405-c96b-4cd7-a5e4-5b537d8511f8",
 								"comment"
 							]
 						}
@@ -5063,19 +5063,132 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{PRODUCT_URL}}/dream/comment/9c96b195-1372-4f21-801d-8bdbcbd3e9ec/comment",
+							"raw": "{{PRODUCT_URL}}/dream/comment/5673805b-3778-45b2-8c0d-004bde384e28/comment",
 							"host": [
 								"{{PRODUCT_URL}}"
 							],
 							"path": [
 								"dream",
 								"comment",
-								"9c96b195-1372-4f21-801d-8bdbcbd3e9ec",
+								"5673805b-3778-45b2-8c0d-004bde384e28",
 								"comment"
 							]
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "/{dream-uuid}/comment/count - 꿈의 댓글 총 개수",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{PRODUCT_URL}}/dream/29bf9405-c96b-4cd7-a5e4-5b537d8511f8/comment/count",
+							"host": [
+								"{{PRODUCT_URL}}"
+							],
+							"path": [
+								"dream",
+								"29bf9405-c96b-4cd7-a5e4-5b537d8511f8",
+								"comment",
+								"count"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/{dream-uuid}/comment/count - 꿈의 댓글 총 개수",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{PRODUCT_URL}}/dream/29bf9405-c96b-4cd7-a5e4-5b537d8511f8/comment/count",
+									"host": [
+										"{{PRODUCT_URL}}"
+									],
+									"path": [
+										"dream",
+										"29bf9405-c96b-4cd7-a5e4-5b537d8511f8",
+										"comment",
+										"count"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Nov 2021 15:58:41 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"timestamp\": \"2021-11-18T00:58:41.016326\",\n    \"content\": {\n        \"collection_value\": false,\n        \"response\": {\n            \"number\": 6\n        }\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "/comment/{comment-uuid}/recommend - 댓글 추천",
@@ -5102,14 +5215,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{PRODUCT_URL}}/dream/comment/1140ef5b-dbaf-413e-897d-53386578a6d2/recommend",
+							"raw": "{{PRODUCT_URL}}/dream/comment/696f078c-1eab-421f-b103-50ebbaabf986/recommend",
 							"host": [
 								"{{PRODUCT_URL}}"
 							],
 							"path": [
 								"dream",
 								"comment",
-								"1140ef5b-dbaf-413e-897d-53386578a6d2",
+								"696f078c-1eab-421f-b103-50ebbaabf986",
 								"recommend"
 							]
 						}
