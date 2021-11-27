@@ -386,7 +386,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": \"jiwoourty\"\n}",
+							"raw": "{\n    \"id\": \"dsm-jiwoo\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1111,7 +1111,65 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"old_password\": \"jiwoo7456@\",\n    \"new_password\": \"jiwoo7456#\"\n}",
+							"raw": "{\n    \"old_password\": \"HelloWorl!ss\",\n    \"new_password\": \"Jiwoo7456@\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{PRODUCT_URL}}/user/password",
+							"host": [
+								"{{PRODUCT_URL}}"
+							],
+							"path": [
+								"user",
+								"password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/password/find - 비밀번호찾기 이메일",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{PRODUCT_URL}}/user/password/find?email=201216jjw@dsm.hs.kr",
+							"host": [
+								"{{PRODUCT_URL}}"
+							],
+							"path": [
+								"user",
+								"password",
+								"find"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "201216jjw@dsm.hs.kr"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/password - 비밀번호 재설정하기",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"new_password\": \"Jiwoo7456@\",\n    \"change_password_token\": \"531668cf-ad16-4c2b-9dd1-1dc195bbbe9e\",\n    \"email\": \"201216jjw@dsm.hs.kr\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1147,7 +1205,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{PRODUCT_URL}}/user/search?query=helloworld",
+							"raw": "{{PRODUCT_URL}}/user/search?query=dsm",
 							"host": [
 								"{{PRODUCT_URL}}"
 							],
@@ -1158,7 +1216,7 @@
 							"query": [
 								{
 									"key": "query",
-									"value": "helloworld"
+									"value": "dsm"
 								}
 							]
 						}
@@ -2768,7 +2826,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"chat\": \"hello World\",\n    \"room\": \"620b6c2c-98e9-4485-b74c-6e81c6f2fda5\",\n    \"from\": \"7359fee5-426f-45f5-bd24-cc675e7bdd12\"\n}",
+											"raw": "{\n    \"chat\": \"hello World\",\n    \"room\": \"d8dc5c9b-c99f-48f1-bcb0-d7c8f5b8da25\",\n    \"from\": \"850802a3-784f-4466-9ba5-87688f66f230\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -3022,7 +3080,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{PRODUCT_URL}}/dream/sell/continue/me?page=0&size=3",
+									"raw": "{{PRODUCT_URL}}/dream/sell/continue/me?page=0&size=16",
 									"host": [
 										"{{PRODUCT_URL}}"
 									],
@@ -3039,7 +3097,7 @@
 										},
 										{
 											"key": "size",
-											"value": "3"
+											"value": "16"
 										}
 									]
 								}
@@ -3361,14 +3419,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{PRODUCT_URL}}/dream/sell/29bf9405-c96b-4cd7-a5e4-5b537d8511f8/request",
+									"raw": "{{PRODUCT_URL}}/dream/sell/fa2346ed-947f-43d8-bf8c-198c75ec0e43/request",
 									"host": [
 										"{{PRODUCT_URL}}"
 									],
 									"path": [
 										"dream",
 										"sell",
-										"29bf9405-c96b-4cd7-a5e4-5b537d8511f8",
+										"fa2346ed-947f-43d8-bf8c-198c75ec0e43",
 										"request"
 									]
 								},
@@ -3392,17 +3450,48 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "{{PRODUCT_URL}}/dream/sell/29bf9405-c96b-4cd7-a5e4-5b537d8511f8/request",
+									"raw": "{{PRODUCT_URL}}/dream/sell/fa2346ed-947f-43d8-bf8c-198c75ec0e43/request",
 									"host": [
 										"{{PRODUCT_URL}}"
 									],
 									"path": [
 										"dream",
 										"sell",
-										"29bf9405-c96b-4cd7-a5e4-5b537d8511f8",
+										"fa2346ed-947f-43d8-bf8c-198c75ec0e43",
 										"request"
 									]
 								}
+							},
+							"response": []
+						},
+						{
+							"name": "/{sell-dream-request-uuid}/accept - 꿈  구매요청 수락",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{PRODUCT_URL}}/dream/sell/79e3bd8f-1877-4d72-bb03-f3bab2ad66b5/accept",
+									"host": [
+										"{{PRODUCT_URL}}"
+									],
+									"path": [
+										"dream",
+										"sell",
+										"79e3bd8f-1877-4d72-bb03-f3bab2ad66b5",
+										"accept"
+									]
+								},
+								"description": "# 꿈 구매요청 수락 \n\n구매요청을 수락하면 채팅방이 생성되고 채팅방의 아이디가 생성된다."
 							},
 							"response": []
 						},
@@ -3443,7 +3532,90 @@
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "/{dream-uuid}/accept - 꿈  구매요청 수락",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{PRODUCT_URL}}/dream/sell/29bf9405-c96b-4cd7-a5e4-5b537d8511f8/accept",
+											"host": [
+												"{{PRODUCT_URL}}"
+											],
+											"path": [
+												"dream",
+												"sell",
+												"29bf9405-c96b-4cd7-a5e4-5b537d8511f8",
+												"accept"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, no-store, max-age=0, must-revalidate"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Expires",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 15 Nov 2021 00:23:04 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": 200,\n    \"timestamp\": \"2021-11-15T09:23:04.236593\",\n    \"content\": {\n        \"collection_value\": false,\n        \"response\": {\n            \"message\": \"a1b342a4-f7b7-4ff6-8577-13fabfea226d\"\n        }\n    }\n}"
+								}
+							]
 						},
 						{
 							"name": "/{dream-uuid} - 판매취소",
@@ -3641,14 +3813,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{PRODUCT_URL}}/dream/sell/29bf9405-c96b-4cd7-a5e4-5b537d8511f8",
+									"raw": "{{PRODUCT_URL}}/dream/sell/fa2346ed-947f-43d8-bf8c-198c75ec0e43",
 									"host": [
 										"{{PRODUCT_URL}}"
 									],
 									"path": [
 										"dream",
 										"sell",
-										"29bf9405-c96b-4cd7-a5e4-5b537d8511f8"
+										"fa2346ed-947f-43d8-bf8c-198c75ec0e43"
 									]
 								}
 							},
@@ -3737,120 +3909,6 @@
 							]
 						},
 						{
-							"name": "/{sell-dream-request-uuid}/accept - 꿈  구매요청 수락",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{accessToken}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [],
-								"url": {
-									"raw": "{{PRODUCT_URL}}/dream/sell/bcf17365-8718-4bc9-a903-a3e67c266e50/accept",
-									"host": [
-										"{{PRODUCT_URL}}"
-									],
-									"path": [
-										"dream",
-										"sell",
-										"bcf17365-8718-4bc9-a903-a3e67c266e50",
-										"accept"
-									]
-								},
-								"description": "# 꿈 구매요청 수락 \n\n구매요청을 수락하면 채팅방이 생성되고 채팅방의 아이디가 생성된다."
-							},
-							"response": [
-								{
-									"name": "/{dream-uuid}/accept - 꿈  구매요청 수락",
-									"originalRequest": {
-										"method": "POST",
-										"header": [],
-										"url": {
-											"raw": "{{PRODUCT_URL}}/dream/sell/29bf9405-c96b-4cd7-a5e4-5b537d8511f8/accept",
-											"host": [
-												"{{PRODUCT_URL}}"
-											],
-											"path": [
-												"dream",
-												"sell",
-												"29bf9405-c96b-4cd7-a5e4-5b537d8511f8",
-												"accept"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Vary",
-											"value": "Origin"
-										},
-										{
-											"key": "Vary",
-											"value": "Access-Control-Request-Method"
-										},
-										{
-											"key": "Vary",
-											"value": "Access-Control-Request-Headers"
-										},
-										{
-											"key": "X-Content-Type-Options",
-											"value": "nosniff"
-										},
-										{
-											"key": "X-XSS-Protection",
-											"value": "1; mode=block"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-cache, no-store, max-age=0, must-revalidate"
-										},
-										{
-											"key": "Pragma",
-											"value": "no-cache"
-										},
-										{
-											"key": "Expires",
-											"value": "0"
-										},
-										{
-											"key": "X-Frame-Options",
-											"value": "DENY"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "Transfer-Encoding",
-											"value": "chunked"
-										},
-										{
-											"key": "Date",
-											"value": "Mon, 15 Nov 2021 00:23:04 GMT"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=60"
-										},
-										{
-											"key": "Connection",
-											"value": "keep-alive"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"status\": 200,\n    \"timestamp\": \"2021-11-15T09:23:04.236593\",\n    \"content\": {\n        \"collection_value\": false,\n        \"response\": {\n            \"message\": \"a1b342a4-f7b7-4ff6-8577-13fabfea226d\"\n        }\n    }\n}"
-								}
-							]
-						},
-						{
 							"name": "/room - 내 채팅방 목록",
 							"request": {
 								"auth": {
@@ -3895,7 +3953,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{PRODUCT_URL}}/dream/sell/chat/620b6c2c-98e9-4485-b74c-6e81c6f2fda5?page=0&size=3",
+									"raw": "{{PRODUCT_URL}}/dream/sell/chat/d8dc5c9b-c99f-48f1-bcb0-d7c8f5b8da25?page=0&size=16",
 									"host": [
 										"{{PRODUCT_URL}}"
 									],
@@ -3903,7 +3961,7 @@
 										"dream",
 										"sell",
 										"chat",
-										"620b6c2c-98e9-4485-b74c-6e81c6f2fda5"
+										"d8dc5c9b-c99f-48f1-bcb0-d7c8f5b8da25"
 									],
 									"query": [
 										{
@@ -3912,7 +3970,7 @@
 										},
 										{
 											"key": "size",
-											"value": "3"
+											"value": "16"
 										}
 									]
 								}
@@ -5671,7 +5729,7 @@
 		},
 		{
 			"key": "PRODUCT_URL",
-			"value": "http://52.78.219.131:8080/v1/api"
+			"value": "https://api.zamong.org/v1/api"
 		},
 		{
 			"key": "USER_UUID",
