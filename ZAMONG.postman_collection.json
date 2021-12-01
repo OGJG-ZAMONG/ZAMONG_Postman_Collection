@@ -268,7 +268,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"user_identity\": \"{{USER_EMAIL2}}\", \n    \"password\": \"{{PASSWORD}}\"\n}",
+							"raw": "{\n    \"user_identity\": \"{{USER_EMAIL1}}\", \n    \"password\": \"{{PASSWORD}}\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1205,7 +1205,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{PRODUCT_URL}}/user/search?query=dsm",
+							"raw": "{{PRODUCT_URL}}/user/search?query=d",
 							"host": [
 								"{{PRODUCT_URL}}"
 							],
@@ -1216,7 +1216,7 @@
 							"query": [
 								{
 									"key": "query",
-									"value": "dsm"
+									"value": "d"
 								}
 							]
 						}
@@ -3419,14 +3419,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{PRODUCT_URL}}/dream/sell/52288955-6db0-4e7d-90de-299f05ff916c/request",
+									"raw": "{{PRODUCT_URL}}/dream/sell/c7c563fd-50ca-43e9-ae2d-d40db0739f0d/request",
 									"host": [
 										"{{PRODUCT_URL}}"
 									],
 									"path": [
 										"dream",
 										"sell",
-										"52288955-6db0-4e7d-90de-299f05ff916c",
+										"c7c563fd-50ca-43e9-ae2d-d40db0739f0d",
 										"request"
 									]
 								},
@@ -3450,14 +3450,14 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "{{PRODUCT_URL}}/dream/sell/52288955-6db0-4e7d-90de-299f05ff916c/request",
+									"raw": "{{PRODUCT_URL}}/dream/sell/e911b08f-bd4e-4292-93f5-d9efcfcdd77d/request",
 									"host": [
 										"{{PRODUCT_URL}}"
 									],
 									"path": [
 										"dream",
 										"sell",
-										"52288955-6db0-4e7d-90de-299f05ff916c",
+										"e911b08f-bd4e-4292-93f5-d9efcfcdd77d",
 										"request"
 									]
 								}
@@ -3644,7 +3644,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzU5OTc3NjIsImV4cCI6MTYzNjAwNDk2Miwic3ViIjoiNzM1OWZlZTUtNDI2Zi00NWY1LWJkMjQtY2M2NzVlN2JkZDEyIiwidHlwZSI6ImFjY2VzcyJ9.HrWWjcyXpWwzVN4_EUIxvvKrpnhkkM9Avf0uUE7lKOY",
+											"value": "{{accessToken}}",
 											"type": "string"
 										}
 									]
@@ -3652,14 +3652,14 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "{{PRODUCT_URL}}/dream/sell/93618cb0-7a66-4ba7-ba8f-d6b6321a4307/done",
+									"raw": "{{PRODUCT_URL}}/dream/sell/c7c563fd-50ca-43e9-ae2d-d40db0739f0d/done",
 									"host": [
 										"{{PRODUCT_URL}}"
 									],
 									"path": [
 										"dream",
 										"sell",
-										"93618cb0-7a66-4ba7-ba8f-d6b6321a4307",
+										"c7c563fd-50ca-43e9-ae2d-d40db0739f0d",
 										"done"
 									]
 								}
@@ -3813,14 +3813,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{PRODUCT_URL}}/dream/sell/fa2346ed-947f-43d8-bf8c-198c75ec0e43",
+									"raw": "{{PRODUCT_URL}}/dream/sell/c7c563fd-50ca-43e9-ae2d-d40db0739f0d",
 									"host": [
 										"{{PRODUCT_URL}}"
 									],
 									"path": [
 										"dream",
 										"sell",
-										"fa2346ed-947f-43d8-bf8c-198c75ec0e43"
+										"c7c563fd-50ca-43e9-ae2d-d40db0739f0d"
 									]
 								}
 							},
@@ -5119,7 +5119,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"content\": \"시발 개새끼 ㅈ같네\",\n    \"p_comment\": null\n}",
+							"raw": "{\n    \"content\": \"시발 개새끼 ㅈ같네\",\n    \"p_comment\": null,\n    \"is_anonymous\": false\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -5318,6 +5318,96 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"status\": 201,\n    \"timestamp\": \"2021-10-27T10:51:13.403441\",\n    \"content\": {\n        \"collection_value\": false,\n        \"response\": {\n            \"uuid\": \"9ce9fa9e-8678-4360-9e6d-3946b91fec71\",\n            \"content\": \"hello 하위댓글\",\n            \"user\": {\n                \"uuid\": \"7359fee5-426f-45f5-bd24-cc675e7bdd12\",\n                \"name\": \"jiwoo\",\n                \"email\": null,\n                \"id\": null,\n                \"profile\": \"https://ogjg-zamong.s3.ap-northeast-1.amazonaws.com/default-posting-image/Rectangle+1.png\",\n                \"share_dream_count\": null,\n                \"lucy_count\": null\n            }\n        }\n    }\n}"
+						},
+						{
+							"name": "/{dream-uuid}/comment - 익명 댓글 작성",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"content\": \"시발 개새끼 ㅈ같네\",\n    \"p_comment\": null,\n    \"is_anonymous\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{PRODUCT_URL}}/dream/be6df9c5-7a27-4d39-9c7b-5f98db6a130f/comment",
+									"host": [
+										"{{PRODUCT_URL}}"
+									],
+									"path": [
+										"dream",
+										"be6df9c5-7a27-4d39-9c7b-5f98db6a130f",
+										"comment"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Nov 2021 16:41:57 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 201,\n    \"timestamp\": \"2021-12-01T01:41:57.308451\",\n    \"content\": {\n        \"collection_value\": false,\n        \"response\": {\n            \"uuid\": \"65ca3be8-4a4e-4c6f-81e1-dab8ae3a1339\",\n            \"content\": \"** **끼 **네\",\n            \"user\": {\n                \"uuid\": \"7359fee5-426f-45f5-bd24-cc675e7bdd12\",\n                \"name\": \"jiwoo\",\n                \"email\": null,\n                \"id\": null,\n                \"profile\": \"https://s3-zamong-1.s3.ap-northeast-2.amazonaws.com/user/10_01.jpg\",\n                \"share_dream_count\": null,\n                \"lucy_count\": null\n            },\n            \"depth\": 0\n        }\n    }\n}"
 						}
 					]
 				},
@@ -5631,7 +5721,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"content\": \"1번째 v2 \"\n}",
+							"raw": "{\n    \"content\": \"욕 안했어여\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -5639,14 +5729,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{PRODUCT_URL}}/dream/comment/7bcbdecb-290b-4e86-aeea-eaf442d7f364/content",
+							"raw": "{{PRODUCT_URL}}/dream/comment/6bf3bdca-57d8-43be-a8ee-1e40427a347e/content",
 							"host": [
 								"{{PRODUCT_URL}}"
 							],
 							"path": [
 								"dream",
 								"comment",
-								"7bcbdecb-290b-4e86-aeea-eaf442d7f364",
+								"6bf3bdca-57d8-43be-a8ee-1e40427a347e",
 								"content"
 							]
 						}
